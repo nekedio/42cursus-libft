@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 11:51:12 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/10/30 19:27:47 by dxenophi         ###   ########.fr       */
+/*   Created: 2020/10/29 18:47:15 by dxenophi          #+#    #+#             */
+/*   Updated: 2020/10/30 13:38:03 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void				*ft_memset(void *arr, int symbol, size_t size)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t size)
 {
+	unsigned char	*ft_dst;
+	unsigned char	*ft_src;
 	size_t			i;
-	unsigned char	*result;
 
+	ft_dst = (unsigned char *)dst;
+	ft_src = (unsigned char *)src;
 	i = 0;
-	result = (unsigned char *)arr;
 	while (i < size)
 	{
-		result[i] = symbol;
+		ft_dst[i] = ft_src[i];
 		i++;
 	}
-	return (result);
+	return (ft_dst);
 }

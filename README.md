@@ -2,10 +2,10 @@
 42cursus-libft
 
 Following features have been recoded:
-- [ ] memset
-- [ ] bzero
-- [ ] memcpy
-- [ ] memccpy
+- [x] memset
+- [x] bzero
+- [x] memcpy
+- [x] memccpy
 - [ ] memmove
 - [ ] memchr
 - [ ] memcmp
