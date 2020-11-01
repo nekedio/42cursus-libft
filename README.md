@@ -6,8 +6,8 @@ Following features have been recoded:
 - [x] bzero
 - [x] memcpy
 - [x] memccpy
-- [ ] memmove
-- [ ] memchr
+- [x] memmove
+- [x] memchr
 - [ ] memcmp
 - [ ] strlen
 - [ ] strlcpy

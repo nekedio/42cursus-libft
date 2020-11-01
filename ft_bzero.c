@@ -10,27 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-extern void *ft_memset(void *arr, int symbol, size_t size);
-
-/* void				ft_bzero(void *arr, size_t size) */
-/* { */
-/* 	size_t			i; */
-/* 	unsigned char	*result; */
-/*  */
-/* 	i = 0; */
-/* 	result = arr; */
-/* 	while (i < size) */
-/* 	{ */
-/* 		result[i] = '\0'; */
-/* 		i++; */
-/* 	} */
-/* } */
-
-void				ft_bzero(void *arr, size_t size)
+void    ft_bzero(void *arr, size_t size)
 {
-	ft_memset(arr, '*', size);
+    ft_memset(arr, '*', size);
 }
 
 
