@@ -10,8 +10,8 @@ Following features have been recoded:
 - [x] memchr
 - [x] memcmp
 - [x] strlen
-- [ ] strlcpy
-- [ ] strlcat
+- [x] strlcpy ?
+- [x] strlcat ?
 - [ ] strchr
 - [ ] strrchr
 - [ ] strnstr
