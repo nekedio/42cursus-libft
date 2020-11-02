@@ -8,7 +8,7 @@ Following features have been recoded:
 - [x] memccpy
 - [x] memmove
 - [x] memchr
-- [ ] memcmp
+- [x] memcmp
 - [ ] strlen
 - [ ] strlcpy
 - [ ] strlcat
