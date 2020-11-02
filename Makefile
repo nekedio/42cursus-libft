@@ -6,7 +6,8 @@ files = libft.h\
 		ft_memmove.c\
 		ft_memchr.c\
 		ft_memcmp.c\
-		ft_strlen.c
+		ft_strlen.c\
+		ft_strlcpy.c
 
 lib = libft.h
 

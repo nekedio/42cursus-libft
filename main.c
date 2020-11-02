@@ -102,66 +102,62 @@ void test_memcpy(void)
 
 void test_memccpy(void)
 {
-	unsigned char src[15]="1234567890";
-	unsigned char dst[15]="";
-	unsigned char *res;
-	
-	unsigned char src1[15]="1234567890";
-	unsigned char dst1[15]="";
-	unsigned char *res1;
-	
-	unsigned char src2[15]="1234567890";
-	unsigned char dst2[15]="";
-	unsigned char *res2;
-
-
-	unsigned char ft_src[15]="1234567890";
-	unsigned char ft_dst[15]="";
-	unsigned char *ft_res;
-	
-	unsigned char ft_src1[15]="1234567890";
-	unsigned char ft_dst1[15]="";
-	unsigned char *ft_res1;
-	
-	unsigned char ft_src2[15]="1234567890";
-	unsigned char ft_dst2[15]="";
-	unsigned char *ft_res2;
-
-
-
 	printf("\n");
 	printf("ft_memccpy____________________\n");
 
-	res = memccpy (dst, src,'5', 10);
-	printf("dst: %s\n",dst);
-	printf("res: %s\n",res);
-	printf("res: %c\n",res[-1]);
-	
-	res1 = memccpy (dst1, src1,'q', 10);
-	printf("dst1: %s\n",dst1);
-	printf("res1: %s\n",res1);
-	
-	res2 = memccpy (dst2, src2,'5', 4);
-	printf("dst2: %s\n",dst2);
-	printf("res2: %s\n",res2);
+	unsigned char src[15]="1234567890";
+	unsigned char dst[15]="";
+	char symbol = '5';
+	int len = 10;
+	unsigned char *res;
+	res = memccpy (dst, src, symbol, len);
+	printf("memccpy(%s, %s, %c, %d) = %s , pointer - 1 = %s\n", dst, src, symbol, len, res, res - 1);
 
+
+	unsigned char src1[15]="1234567890";
+	unsigned char dst1[15]="";
+	unsigned char *res1;
+	char symbol1 = 'q';	
+	int len1 = 9;
+	res1 = memccpy (dst1, src1,symbol1, len);
+	printf("memccpy(%s, %s, %c, %d) = %s \n", dst1, src1, symbol1, len1, res1);
+
+	
+	unsigned char src2[15]="1234567890";
+	unsigned char dst2[15]="";
+	char symbol2 = '5';
+	int len2 = 4;
+	unsigned char *res2;
+	res2 = memccpy (dst2, src2 ,symbol2 ,len2);
+	printf("memccpy(%s, %s, %c, %d) = %s \n", dst2, src2, symbol2, len2, res2);
 
 	printf("-----------------------------\n");
 
-	ft_res = ft_memccpy (ft_dst, ft_src,'5', 10);
-	printf("ft_dst: %s\n",ft_dst);
-	printf("ft_res: %s\n",ft_res);
-	printf("ft_res: %c\n",ft_res[-1]);
+	unsigned char ft_src[15]="1234567890";
+	unsigned char ft_dst[15]="";
+	char ft_symbol = '5';
+	int ft_len = 10;
+	unsigned char *ft_res;
+	ft_res = ft_memccpy (ft_dst, ft_src, ft_symbol, ft_len);
+	printf("ft_memccpy(%s, %s, %c, %d) = %s , pointer - 1 = %s\n", ft_dst, ft_src, ft_symbol, ft_len, ft_res, ft_res - 1);
 
-	ft_res1 = memccpy (ft_dst1, ft_src1,'q', 10);
-	printf("ft_dst1: %s\n",ft_dst1);
-	printf("ft_res1: %s\n",ft_res1);
+
+	unsigned char ft_src1[15]="1234567890";
+	unsigned char ft_dst1[15]="";
+	unsigned char *ft_res1;
+	char ft_symbol1 = 'q';	
+	int ft_len1 = 9;
+	ft_res1 = ft_memccpy (ft_dst1, ft_src1,ft_symbol1, ft_len);
+	printf("ft_memccpy(%s, %s, %c, %d) = %s \n", ft_dst1, ft_src1, ft_symbol1, ft_len1, ft_res1);
+
 	
-	ft_res2 = ft_memccpy (ft_dst2, ft_src2,'5', 4);
-	printf("ft_dst2: %s\n",ft_dst2);
-	printf("ft_res2: %s\n",ft_res2);
-
-
+	unsigned char ft_src2[15]="1234567890";
+	unsigned char ft_dst2[15]="";
+	char ft_symbol2 = '5';
+	int ft_len2 = 4;
+	unsigned char *ft_res2;
+	ft_res2 = ft_memccpy (ft_dst2, ft_src2 ,ft_symbol2 ,ft_len2);
+	printf("ft_memccpy(%s, %s, %c, %d) = %s \n", ft_dst2, ft_src2, ft_symbol2, ft_len2, ft_res2);
 
 }
 
@@ -222,32 +218,35 @@ void test_memchr(void)
 	printf("\n");
 	printf("ft_memchr____________________\n");
 
-	unsigned char src[10]="1234567";
+	unsigned char src[10]="qwertyu";
 	unsigned char *res;
-	res = memchr(src, '3', 6);
-	printf("src %s\n", src);
-	printf("src %s\n", res);
+	char symbol = 'e';
+	int len = 6;
+	res = memchr(src, symbol, len);
+	printf("memchr(%s, %c, %d) = %s, pointer - 1 =   %s\n", src, symbol, len, res, res-1);
 
 	unsigned char src1[10]="1234567";
 	unsigned char *res1;
-	res1 = memchr(src1, '4', 3);
-	printf("src1 %s\n", src1);
-	printf("res1 %s\n", res1);
+	char symbol1 = '4';
+	int len1 = 3;
+	res1 = memchr(src1, symbol1, len1);
+	printf("memchr(%s, %c, %d) = %s\n", src1, symbol1, len1, res1);
 
 	printf("-----------------------------\n");
 
-	unsigned char ft_src[10]="1234567";
+	unsigned char ft_src[10]="qwertyu";
 	unsigned char *ft_res;
-	ft_res = ft_memchr(ft_src, '3', 6);
-	printf("ft_src %s\n", ft_src);
-	printf("ft_res %s\n", ft_res);
-
+	char ft_symbol = 'e';
+	int ft_len = 6;
+	ft_res = ft_memchr(ft_src, ft_symbol, ft_len);
+	printf("memchr(%s, %c, %d) = %s, pointer - 1 =   %s\n", ft_src, ft_symbol, ft_len, ft_res, ft_res-1);
+	
 	unsigned char ft_src1[10]="1234567";
 	unsigned char *ft_res1;
-	ft_res1 = ft_memchr(ft_src1, '4', 3);
-	printf("ft_src %s\n", ft_src1);
-	printf("ft_res %s\n", ft_res1);
-
+	char ft_symbol1 = '4';
+	int ft_len1 = 3;
+	ft_res1 = ft_memchr(ft_src1, ft_symbol1, ft_len1);
+	printf("ft_memchr(%s, %c, %d) = %s\n", ft_src1, ft_symbol1, ft_len1, ft_res1);
 
 
 
@@ -257,7 +256,7 @@ void test_memcmp(void)
 {
 	
 	printf("\n");
-	printf("ft_memcpy____________________\n");
+	printf("ft_memcmp____________________\n");
 	
 	char str_a[10] = "qwfrtyu";
 	char str_b[10] = "qwertyu";
@@ -289,9 +288,6 @@ void test_memcmp(void)
 
 	printf("-----------------------------\n");
 
-	printf("\n");
-	printf("ft_memcpy____________________\n");
-	
 	char ft_str_a[10] = "qwfrtyu";
 	char ft_str_b[10] = "qwertyu";
 	size_t ft_len = 6;
@@ -326,7 +322,7 @@ void test_strlen(void)
 {
 
 	printf("\n");
-	printf("ft_memcpy____________________\n");
+	printf("ft_strlen____________________\n");
 	
 	char str[10] = "qwfrtyu";
 	int result;
@@ -353,6 +349,94 @@ void test_strlen(void)
 
 }
 
+void test_strlcpy(void)
+{
+
+	printf("\n");
+	printf("ft_strlcpy____________________\n");
+
+	char str[10] = "qwerty";
+	char dst[10] = "";
+	int len = 3;
+	int  result;
+	printf("before: str = %s, dst = %s, len = %d\n", str, dst, len);
+	result = strlcpy(dst, str, len);    
+	printf("strlcpy(str, dst, len) = %d\n", result);
+	printf("after: str = %s, dst = %s\n", str, dst);
+	
+	printf("\n");
+
+	char str1[10] = "qwerty";
+	char dst1[10] = "";
+	int len1 = 9;
+	int  result1;
+	printf("before: str = %s, dst = %s, len = %d\n", str1, dst1, len1);
+	result1 = strlcpy(dst1, str1, len1);    
+	printf("strlcpy(str, dst, len) = %d\n", result1);
+	printf("after: str = %s, dst = %s\n", str1, dst1);
+
+	printf("-----------------------------\n");
+
+	char ft_str[10] = "qwerty";
+	char ft_dst[10] = "";
+	int ft_len = 3;
+	int  ft_result;
+	printf("before: str = %s, dst = %s, len = %d\n", ft_str, ft_dst, ft_len);
+	ft_result = ft_strlcpy(ft_dst, ft_str, ft_len);    
+	printf("strlcpy(str, dst, len) = %d\n", ft_result);
+	printf("after: str = %s, dst = %s\n", ft_str, ft_dst);
+
+	printf("\n");
+	
+	char ft_str1[10] = "qwerty";
+	char ft_dst1[10] = "";
+	int ft_len1 = 9;
+	int  ft_result1;
+	printf("before: str = %s, dst = %s, len = %d\n", ft_str1, ft_dst1, ft_len1);
+	ft_result1 = ft_strlcpy(ft_dst1, ft_str1, ft_len1);    
+	printf("strlcpy(str, dst, len) = %d\n", ft_result1);
+	printf("after: str = %s, dst = %s\n", ft_str1, ft_dst1);
+
+
+}
+
+void test_strlcat(void)
+{
+
+	printf("\n");
+	printf("ft_strlcat____________________\n");
+
+	char str[20] = "qwerty";
+	char dst[12] = "asdfg";
+	int len = 5;
+	int  result;
+	printf("before: str = %s, dst = %s, len = %d\n", str, dst, len);
+	result = strlcat(dst, str, len);    
+	printf("strlcat(str, dst, len) = %d\n", result);
+	printf("after: str = %s, dst = %s\n", str, dst);
+	
+	printf("\n");
+
+
+	printf("-----------------------------\n");
+
+	char str1[20] = "qwerty";
+	char dst1[12] = "asdfg";
+	int len1 = 5;
+	int  result1;
+	printf("before: str = %s, dst = %s, len = %d\n", str1, dst1, len1);
+	result1 = strlcat(dst1, str1, len1);    
+	printf("strlcat(str, dst, len) = %d\n", result1);
+	printf("after: str = %s, dst = %s\n", str1, dst1);
+	
+	printf("\n");
+
+}
+
+
+
+
+
 
 void test(void)
 {
@@ -370,12 +454,14 @@ void test(void)
 
 int main (void)
 {
-	//test_memset();
-	//test_bzero();
-	//test_memcpy();
-	//test_memccpy();
-	//test_memmove();
-	//test_memchr();
-	//test_memcmp();
-	test_strlen();
+	/* test_memset(); */
+	/* test_bzero(); */
+	/* test_memcpy(); */
+	/* test_memccpy(); */
+	/* test_memmove(); */
+	/* test_memchr(); */
+	/* test_memcmp(); */
+	/* test_strlen(); */
+	test_strlcpy();
+	//test_strlcat();
 }

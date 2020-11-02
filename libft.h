@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:02:48 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/02 14:14:40 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/02 19:26:08 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *src1, const void *src2, size_t len);
 size_t	ft_strlen(const char *src);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char * dst, const char * src, size_t dstsize);
 
 #endif
