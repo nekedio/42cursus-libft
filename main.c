@@ -320,9 +320,38 @@ void test_memcmp(void)
 	ft_result3 = ft_memcmp(ft_str_a3, ft_str_b3, ft_len3);
 	printf("ft_memcmp(%s, %s, %ld) =  %d\n", ft_str_a3, ft_str_b3, ft_len3, ft_result3);
 
-
 }
 
+void test_strlen(void)
+{
+
+	printf("\n");
+	printf("ft_memcpy____________________\n");
+	
+	char str[10] = "qwfrtyu";
+	int result;
+	result = strlen(str);
+	printf("strlen(%s) =  %d\n", str, result);
+
+	char str1[10] = "";
+	int result1;
+	result1 = strlen(str1);
+	printf("strlen(%s) =  %d\n", str1, result1);
+
+	printf("-----------------------------\n");
+
+	char ft_str[10] = "qwfrtyu";
+	int ft_result;
+	ft_result = ft_strlen(ft_str);
+	printf("ft_strlen(%s) =  %d\n", ft_str, ft_result);
+
+	char ft_str1[10] = "";
+	int ft_result1;
+	ft_result1 = ft_strlen(ft_str1);
+	printf("ft_strlen(%s) =  %d\n", ft_str1, ft_result1);
+
+
+}
 
 
 void test(void)
@@ -347,5 +376,6 @@ int main (void)
 	//test_memccpy();
 	//test_memmove();
 	//test_memchr();
-	test_memcmp();
+	//test_memcmp();
+	test_strlen();
 }
