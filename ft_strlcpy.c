@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:56:14 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/02 19:57:02 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/03 15:54:28 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,20 @@
 
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	*ft_dst;
-	char	*ft_src;
-	int		len;
+	size_t	len_src;
+	size_t	len_dst;
+	size_t	i;
 
-	ft_src = (char *)src;
-	len = ft_strlen(ft_src);
-	ft_dst = ft_memcpy(dst, ft_src, dstsize - 1);
-	*(ft_dst + len) = '*';
-	return (len);
+	len_src = ft_strlen(src);
+	len_dst = ft_strlen(dst);
+	i = 0;
+	if (dstsize == 0)
+		return (len_src);
+	while (src[i] && i < dstsize - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (len_src);
 }
