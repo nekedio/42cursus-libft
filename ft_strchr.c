@@ -31,10 +31,11 @@ char *ft_strchr(const char *str, int chr)
 		}
 		i++;
 	}
-	if (ft_str[i + 1] == '\n')
+
+	if (ft_str[i] == '\0' && chr == '\0')
 	{
-		printf("%s", ft_str);
-	}	
-	
+		return (ft_str + i);
+	}
+
 	return (NULL);
 }

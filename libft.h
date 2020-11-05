@@ -29,5 +29,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char 	*ft_strchr(const char *str, int chr);
 char 	*ft_strrchr(const char *str, int chr);
+int		ft_strncmp(const char *str1, const char *str2, size_t len);
+int		ft_atoi(const char *str);
+int		ft_isalpha(int chr);
+int		ft_isdigit(int chr);
+int		ft_isalnum(int chr);
+int		ft_isascii(int chr);
+int		ft_isprint(int chr);
+int		ft_toupper(int chr);
+int		ft_tolower(int chr);
 
 #endif

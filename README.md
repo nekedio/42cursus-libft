@@ -10,20 +10,20 @@ Following features have been recoded:
 - [x] memchr
 - [x] memcmp
 - [x] strlen
-- [x] strlcpy
-- [x] strlcat
-- [ ] strchr
-- [ ] strrchr
-- [ ] strnstr
-- [ ] strncmp
-- [ ] atoi
-- [ ] isalpha
-- [ ] isdigit
-- [ ] isalnum
-- [ ] isascii
-- [ ] isprint
-- [ ] toupper
-- [ ] tolower
+- [x] strlcpy bsd
+- [x] strlcat bsd
+- [x] strchr
+- [x] strrchr
+- [ ] strnstr bsd
+- [x] strncmp
+- [x] atoi
+- [x] isalpha
+- [x] isdigit
+- [x] isalnum
+- [x] isascii
+- [x] isprint
+- [x] toupper
+- [x] tolower
 
 Using the function “malloc”:
 - [ ] calloc
