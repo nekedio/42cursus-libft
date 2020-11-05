@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 17:19:37 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/05 19:40:42 by dxenophi         ###   ########.fr       */
+/*   Created: 2020/11/05 13:03:51 by dxenophi          #+#    #+#             */
+/*   Updated: 2020/11/05 19:39:10 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *str, int chr)
+char		*ft_strnstr(const char *large_str, const char *small_str,
+		size_t len)
 {
-	char	*ft_str;
-	int		i;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	*ft_large_str;
 
-	ft_str = (char *)str;
+	ft_large_str = (char *)large_str;
+	if (!large_str || !small_str)
+		return (NULL);
 	i = 0;
-	while (ft_str[i])
+	while (ft_large_str[i] && i < len)
 	{
-		if (ft_str[i] == chr)
+		k = i;
+		j = 0;
+		while ((ft_large_str[k] == small_str[j]) && ft_large_str[k] && k < len)
 		{
-			return (ft_str + i);
+			j++;
+			k++;
 		}
+		if (!small_str[j])
+			return (ft_large_str + i);
 		i++;
-	}
-	if (ft_str[i] == '\0' && chr == '\0')
-	{
-		return (ft_str + i);
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:02:48 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/03 18:02:03 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/05 19:43:44 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdlib.h>
 # include <stdio.h> //
 
 void	*ft_memset(void *arr, int symbol, size_t size);
 void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t size);
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int symbol,
-		size_t size);
+void	*ft_memcpy(void *dst, const void *src, size_t size);
+void	*ft_memccpy(void *dst, const void *src, int symbol, size_t size);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *src1, const void *src2, size_t len);
 size_t	ft_strlen(const char *src);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-char 	*ft_strchr(const char *str, int chr);
-char 	*ft_strrchr(const char *str, int chr);
+char	*ft_strchr(const char *str, int chr);
+char	*ft_strrchr(const char *str, int chr);
 int		ft_strncmp(const char *str1, const char *str2, size_t len);
 int		ft_atoi(const char *str);
 int		ft_isalpha(int chr);
@@ -38,5 +38,8 @@ int		ft_isascii(int chr);
 int		ft_isprint(int chr);
 int		ft_toupper(int chr);
 int		ft_tolower(int chr);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 
 #endif

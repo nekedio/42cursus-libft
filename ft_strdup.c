@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 17:19:37 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/05 19:40:42 by dxenophi         ###   ########.fr       */
+/*   Created: 2020/11/05 18:37:56 by dxenophi          #+#    #+#             */
+/*   Updated: 2020/11/05 19:36:03 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *str, int chr)
+char		*ft_strdup(const char *str)
 {
-	char	*ft_str;
-	int		i;
+	char	*result;
 
-	ft_str = (char *)str;
-	i = 0;
-	while (ft_str[i])
-	{
-		if (ft_str[i] == chr)
-		{
-			return (ft_str + i);
-		}
-		i++;
-	}
-	if (ft_str[i] == '\0' && chr == '\0')
-	{
-		return (ft_str + i);
-	}
-	return (NULL);
+	result = (char *)malloc(sizeof(str));
+	if (!result)
+		return (NULL);
+	ft_strlcpy(result, str, ft_strlen(str) + 1);
+	return (result);
 }

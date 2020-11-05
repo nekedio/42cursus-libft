@@ -14,7 +14,7 @@ Following features have been recoded:
 - [x] strlcat bsd
 - [x] strchr
 - [x] strrchr
-- [ ] strnstr bsd
+- [x] strnstr bsd
 - [x] strncmp
 - [x] atoi
 - [x] isalpha
@@ -26,5 +26,5 @@ Following features have been recoded:
 - [x] tolower
 
 Using the function “malloc”:
-- [ ] calloc
-- [ ] strdup
+- [x] calloc
+- [x] strdup

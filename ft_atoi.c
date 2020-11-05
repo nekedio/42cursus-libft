@@ -1,26 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 19:29:43 by dxenophi          #+#    #+#             */
+/*   Updated: 2020/11/05 19:35:19 by dxenophi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
-	long long i;
-	long long sign;
-	long long result;
-	long long num;
+	long long	i;
+	long long	sign;
+	long long	result;
+	long long	num;
+
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] == ' ' || str[i] == '\f' ||  str[i] == '\n' ||
-		   	str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
+	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n' ||
+			str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
 		i++;
-	
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = -1;
 		i++;
 	}
-
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num = str[i] - '0';
@@ -29,4 +39,3 @@ int ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-

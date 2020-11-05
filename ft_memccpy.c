@@ -6,14 +6,13 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 14:47:47 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/10/30 18:19:23 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/05 19:08:52 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int symbol,
-		size_t size)
+void	*ft_memccpy(void *dst, const void *src, int symbol, size_t size)
 {
 	unsigned char	*ft_dst;
 	unsigned char	*ft_src;
