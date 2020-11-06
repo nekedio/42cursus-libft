@@ -1273,6 +1273,99 @@ void test_strdup(void)
 
 }
 
+void test_ft_substr(void)
+{
+
+	printf("\n");
+	
+	printf("ft_ft_substr____________________\n");
+	
+	char *str = "0123qwert";
+	
+	int start_symbol = 0;
+	size_t len = 4;
+	char *result;
+	result = ft_substr(str, start_symbol, len);
+	printf("ft_substr(%s, %d, %zu) = %s\n", str, start_symbol, len, result);
+
+	int start_symbol1 = 4;
+	size_t len1 = 5;
+	char *result1;
+	result1 = ft_substr(str, start_symbol1, len1);
+	printf("ft_substr(%s, %d, %zu) = %s\n", str, start_symbol1, len1, result1);
+
+	int start_symbol2 = 4;
+	size_t len2 = 0;
+	char *result2;
+	result2 = ft_substr(str, start_symbol2, len2);
+	printf("ft_substr(%s, %d, %zu) = %s\n", str, start_symbol2, len2, result2);
+	
+	int start_symbol3 = 4;
+	size_t len3 = 6;
+	char *result3;
+	result3 = ft_substr(str, start_symbol3, len3);
+	printf("ft_substr(%s, %d, %zu) = %s\n", str, start_symbol3, len3, result3);
+	
+	int start_symbol4 = 4;
+	size_t len4 = 4;
+	char *result4;
+	result4 = ft_substr(str, start_symbol4, len4);
+	printf("ft_substr(%s, %d, %zu) = %s\n", str, start_symbol4, len4, result4);
+	
+	int start_symbol5 = 0;
+	size_t len5 = 1;
+	char *result5;
+	result5 = ft_substr(str, start_symbol5, len5);
+	printf("ft_substr(%s, %d, %zu) = %s\n", str, start_symbol5, len5, result5);
+	
+	int start_symbol6 = 8;
+	size_t len6 = 1;
+	char *result6;
+	result6 = ft_substr(str, start_symbol6, len6);
+	printf("ft_substr(%s, %d, %zu) = %s\n", str, start_symbol6, len6, result6);
+	
+
+	
+	printf("-----------------------------\n");
+
+	
+
+}
+
+void test_ft_strjoin(void)
+{
+
+	printf("\n");
+	
+	printf("ft_strjoin____________________\n");
+		
+	char *str_p = "qwe";
+	char *str_s = "123";
+	char *result;
+	result = ft_strjoin(str_p, str_s);	
+	printf("ft_strjoin(%s, %s) = %s\n", str_p, str_s, result);
+	
+	char *str_p1 = "qwe";
+	char *str_s1 = "";
+	char *result1;
+	result1 = ft_strjoin(str_p1, str_s1);	
+	printf("ft_strjoin(%s, %s) = %s\n", str_p1, str_s1, result1);
+	
+	char *str_p2 = "";
+	char *str_s2 = "123";
+	char *result2;
+	result2 = ft_strjoin(str_p2, str_s2);	
+	printf("ft_strjoin(%s, %s) = %s\n", str_p2, str_s2, result2);
+	
+
+	
+	
+	printf("-----------------------------\n");
+
+	
+
+}
+
 
 void test(void)
 {
@@ -1280,8 +1373,6 @@ void test(void)
 	printf("\n");
 	
 	printf("ft_memcpy____________________\n");
-	
-	
 	
 	
 	printf("-----------------------------\n");
@@ -1293,28 +1384,34 @@ void test(void)
 
 int main (void)
 {
-	test_memset();
-	test_bzero();
-	test_memcpy();
-	test_memccpy();
-	test_memmove();
-	test_memchr();
-	test_memcmp();
-	test_strlen();
-	test_strlcpy(); //bsd
-	test_strlcat(); //bsd
-	test_strchr();
-	test_strrchr();
-	test_strnstr(); //bsd
-	test_strncmp();
-	test_atoi();
-	test_isalpha();
-	test_isdigit();
-	test_isalnum();
-	test_isascii();
-	test_isprint();
-	test_toupper();
-	test_tolower();
-	test_calloc();
-	test_strdup();
+	// part 1
+	/* test_memset(); */
+	/* test_bzero(); */
+	/* test_memcpy(); */
+	/* test_memccpy(); */
+	/* test_memmove(); */
+	/* test_memchr(); */
+	/* test_memcmp(); */
+	/* test_strlen(); */
+	/* test_strlcpy(); //bsd */
+	/* test_strlcat(); //bsd */
+	/* test_strchr(); */
+	/* test_strrchr(); */
+	/* test_strnstr(); //bsd */
+	/* test_strncmp(); */
+	/* test_atoi(); */
+	/* test_isalpha(); */
+	/* test_isdigit(); */
+	/* test_isalnum(); */
+	/* test_isascii(); */
+	/* test_isprint(); */
+	/* test_toupper(); */
+	/* test_tolower(); */
+	/* test_calloc(); */
+	/* test_strdup(); */
+
+	// part 2
+	/* test_ft_substr(); */
+	test_ft_strjoin();
+
 }
