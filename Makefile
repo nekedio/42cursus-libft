@@ -24,7 +24,8 @@ files = libft.h\
 		ft_calloc.c\
 		ft_strdup.c\
 		ft_substr.c\
-		ft_strjoin.c
+		ft_strjoin.c\
+		ft_strtrim.c
 
 lib = libft.h
 

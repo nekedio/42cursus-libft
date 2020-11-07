@@ -6,19 +6,19 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 19:09:36 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/06 21:32:47 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/07 20:00:16 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void			genstr(char *dst, char *srt, unsigned int *num)
+static char			*genstr(char *dst, char const *srt, unsigned int *counter)
 {
 	unsigned int	i;
 	unsigned int	j;
 
 	i = 0;
-	j = *num;
+	j = *counter;
 	while (srt[i])
 	{
 		dst[j] = srt[i];
@@ -26,26 +26,22 @@ static void			genstr(char *dst, char *srt, unsigned int *num)
 		j++;
 	}
 	dst[j] = '\0';
-	*num = j;
+	*counter = j;
+	return (dst);
 }
 
 char				*ft_strjoin(char const *str1, char const *str2)
 {
 	unsigned int	sum_str;
 	char			*result;
-	unsigned int	i;
-	char			*ft_str1;
-	char			*ft_str2;
+	unsigned int	counter;
 
-	
-	ft_str1 = (char *)str1;
-	ft_str2 = (char *)str2;
 	sum_str = ft_strlen(str1) + ft_strlen(str2);
 	result = (char *)malloc(sizeof(result) * sum_str + 1);
 	if (!result || !str1 || !str2)
 		return (NULL);
-	i = 0;
-	genstr(result, ft_str1, &i);
-	genstr(result, ft_str2, &i);
+	counter = 0;
+	result = genstr(result, str1, &counter);
+	result = genstr(result, str2, &counter);
 	return (result);
 }

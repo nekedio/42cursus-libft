@@ -1366,6 +1366,37 @@ void test_ft_strjoin(void)
 
 }
 
+void test_ft_strtrim(void)
+{
+
+	printf("\n");
+	
+	printf("ft_strtrim____________________\n");
+	
+	char *str = "%_@qw@ert";
+	char *set = "_@%";
+	char *result;
+	result = ft_strtrim(str, set);
+	printf("ft_strtrim(%s, %s) = %s\n", str, set, result);
+
+	char *str1 = "qwe!#rt!#!";
+	char *set1 = "!#";
+	char *result1;
+	result1 = ft_strtrim(str1, set1);
+	printf("ft_strtrim(%s, %s) = %s\n", str1, set1, result1);
+	
+	char *str2 = "_!##_qw!ert_!#!";
+	char *set2 = "!#_";
+	char *result2;
+	result2 = ft_strtrim(str2, set2);
+	printf("ft_strtrim(%s, %s) = %s\n", str2, set2, result2);
+
+	printf("-----------------------------\n");
+
+	
+
+}
+
 
 void test(void)
 {
@@ -1412,6 +1443,7 @@ int main (void)
 
 	// part 2
 	/* test_ft_substr(); */
-	test_ft_strjoin();
+	/*test_ft_strjoin(); */
+	test_ft_strtrim();
 
 }
