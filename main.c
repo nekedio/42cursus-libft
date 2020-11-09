@@ -357,50 +357,50 @@ void test_strlcpy(void)
 	printf("\n");
 	printf("ft_strlcpy____________________\n");
 
-	char str[10] = "qwerty";
-	char dst[10] = "";
-	int len = 3;
-	int  result;
-	printf("before: str = %s, dst = %s, len = %d\n", str, dst, len);
-	result = strlcpy(dst, str, len);    
-	printf("strlcpy(str, dst, len) = %d\n", result);
-	printf("after: str = %s, dst = %s\n", str, dst);
-
-	printf("\n");
-
-	char str1[10] = "qwerty";
-	char dst1[10] = "111111111";
-	int len1 = 9;
-	int  result1;
-	printf("before: str = %s, dst = %s, len = %d\n", str1, dst1, len1);
-	result1 = strlcpy(dst1, str1, len1);    
-	printf("strlcpy(str, dst, len) = %d\n", result1);
-	printf("after: str = %s, dst = %s\n", str1, dst1);
-	printf("dst1 + 7 = %s\n", dst1+7);
-
-	printf("\n");
-
-	char str2[10] = "qwerty";
-	char dst2[10] = "111111111";
-	int len2 = 8;
-	int  result2;
-	printf("before: str = %s, dst = %s, len = %d\n", str2, dst2, len2);
-	result2 = strlcpy(dst2, str2, len2);    
-	printf("strlcpy(str, dst, len) = %d\n", result2);
-	printf("after: str = %s, dst = %s\n", str2, dst2);
-	printf("dst1 + 7 = %s\n", dst2+7);
-
-	printf("\n");
-
-	char str3[10] = "qwerty";
-	char dst3[10] = "111111111";
-	int len3 = 0;
-	int  result3;
-	printf("before: str = %s, dst = %s, len = %d\n", str3, dst3, len3);
-	result3 = strlcpy(dst3, str3, len3);    
-	printf("strlcpy(str, dst, len) = %d\n", result3);
-	printf("after: str = %s, dst = %s\n", str3, dst3);
-	printf("dst1 + 7 = %s\n", dst3+7);
+	/* char str[10] = "qwerty"; */
+	/* char dst[10] = ""; */
+	/* int len = 3; */
+	/* int  result; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str, dst, len); */
+	/* result = strlcpy(dst, str, len);     */
+	/* printf("strlcpy(str, dst, len) = %d\n", result); */
+	/* printf("after: str = %s, dst = %s\n", str, dst); */
+    /*  */
+	/* printf("\n"); */
+    /*  */
+	/* char str1[10] = "qwerty"; */
+	/* char dst1[10] = "111111111"; */
+	/* int len1 = 9; */
+	/* int  result1; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str1, dst1, len1); */
+	/* result1 = strlcpy(dst1, str1, len1);     */
+	/* printf("strlcpy(str, dst, len) = %d\n", result1); */
+	/* printf("after: str = %s, dst = %s\n", str1, dst1); */
+	/* printf("dst1 + 7 = %s\n", dst1+7); */
+    /*  */
+	/* printf("\n"); */
+    /*  */
+	/* char str2[10] = "qwerty"; */
+	/* char dst2[10] = "111111111"; */
+	/* int len2 = 8; */
+	/* int  result2; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str2, dst2, len2); */
+	/* result2 = strlcpy(dst2, str2, len2);     */
+	/* printf("strlcpy(str, dst, len) = %d\n", result2); */
+	/* printf("after: str = %s, dst = %s\n", str2, dst2); */
+	/* printf("dst1 + 7 = %s\n", dst2+7); */
+    /*  */
+	/* printf("\n"); */
+    /*  */
+	/* char str3[10] = "qwerty"; */
+	/* char dst3[10] = "111111111"; */
+	/* int len3 = 0; */
+	/* int  result3; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str3, dst3, len3); */
+	/* result3 = strlcpy(dst3, str3, len3);     */
+	/* printf("strlcpy(str, dst, len) = %d\n", result3); */
+	/* printf("after: str = %s, dst = %s\n", str3, dst3); */
+	/* printf("dst1 + 7 = %s\n", dst3+7); */
 
 	printf("-----------------------------\n");
 
@@ -461,58 +461,58 @@ void test_strlcat(void)
 	printf("\n");
 	printf("ft_strlcat____________________\n");
 
-	char str[20] = "qwerty";
-	char dst[12] = "12345";
-	int len = 5;
-	int  result;
-	printf("before: str = %s, dst = %s, len = %d\n", str, dst, len);
-	result = strlcat(dst, str, len);    
-	printf("strlcat(str, dst, len) = %d\n", result);
-	printf("after: str = %s, dst = %s\n", str, dst);
-
-	printf("\n");
-
-	char str1[20] = "qwerty";
-	char dst1[12] = "12345";
-	int len1 = 7;
-	int  result1;
-	printf("before: str = %s, dst = %s, len = %d\n", str1, dst1, len1);
-	result1 = strlcat(dst1, str1, len1);    
-	printf("strlcat(str, dst, len) = %d\n", result1);
-	printf("after: str = %s, dst = %s\n", str1, dst1);
-
-	printf("\n");
-
-	char str2[20] = "qwerty";
-	char dst2[20] = "12345";
-	int len2 = 1;
-	int  result2;
-	printf("before: str = %s, dst = %s, len = %d\n", str2, dst2, len2);
-	result2 = strlcat(dst2, str2, len2);    
-	printf("strlcat(str, dst, len) = %d\n", result2);
-	printf("after: str = %s, dst = %s\n", str2, dst2);
-
-	printf("\n");
-
-	char str3[20] = "qwerty";
-	char dst3[20] = "12345";
-	int len3 = 19;
-	int  result3;
-	printf("before: str = %s, dst = %s, len = %d\n", str3, dst3, len3);
-	result3 = strlcat(dst3, str3, len3);    
-	printf("strlcat(str, dst, len) = %d\n", result3);
-	printf("after: str = %s, dst = %s\n", str3, dst3);
-
-	printf("\n");
-
-	char str4[20] = "qwerty";
-	char dst4[20] = "12345";
-	int len4 = 0;
-	int  result4;
-	printf("before: str = %s, dst = %s, len = %d\n", str4, dst4, len4);
-	result4 = strlcat(dst4, str4, len4);    
-	printf("strlcat(str, dst, len) = %d\n", result4);
-	printf("after: str = %s, dst = %s\n", str4, dst4);
+	/* char str[20] = "qwerty"; */
+	/* char dst[12] = "12345"; */
+	/* int len = 5; */
+	/* int  result; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str, dst, len); */
+	/* result = strlcat(dst, str, len);     */
+	/* printf("strlcat(str, dst, len) = %d\n", result); */
+	/* printf("after: str = %s, dst = %s\n", str, dst); */
+    /*  */
+	/* printf("\n"); */
+    /*  */
+	/* char str1[20] = "qwerty"; */
+	/* char dst1[12] = "12345"; */
+	/* int len1 = 7; */
+	/* int  result1; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str1, dst1, len1); */
+	/* result1 = strlcat(dst1, str1, len1);     */
+	/* printf("strlcat(str, dst, len) = %d\n", result1); */
+	/* printf("after: str = %s, dst = %s\n", str1, dst1); */
+    /*  */
+	/* printf("\n"); */
+    /*  */
+	/* char str2[20] = "qwerty"; */
+	/* char dst2[20] = "12345"; */
+	/* int len2 = 1; */
+	/* int  result2; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str2, dst2, len2); */
+	/* result2 = strlcat(dst2, str2, len2);     */
+	/* printf("strlcat(str, dst, len) = %d\n", result2); */
+	/* printf("after: str = %s, dst = %s\n", str2, dst2); */
+    /*  */
+	/* printf("\n"); */
+    /*  */
+	/* char str3[20] = "qwerty"; */
+	/* char dst3[20] = "12345"; */
+	/* int len3 = 19; */
+	/* int  result3; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str3, dst3, len3); */
+	/* result3 = strlcat(dst3, str3, len3);     */
+	/* printf("strlcat(str, dst, len) = %d\n", result3); */
+	/* printf("after: str = %s, dst = %s\n", str3, dst3); */
+    /*  */
+	/* printf("\n"); */
+    /*  */
+	/* char str4[20] = "qwerty"; */
+	/* char dst4[20] = "12345"; */
+	/* int len4 = 0; */
+	/* int  result4; */
+	/* printf("before: str = %s, dst = %s, len = %d\n", str4, dst4, len4); */
+	/* result4 = strlcat(dst4, str4, len4);     */
+	/* printf("strlcat(str, dst, len) = %d\n", result4); */
+	/* printf("after: str = %s, dst = %s\n", str4, dst4); */
 
 	printf("\n");
 
@@ -678,127 +678,127 @@ void test_strnstr(void)
 	printf("\n");
 	printf("ft_strnstr____________________\n");
 	
-	const char *large_str = "Foo_Bar_Baz";
-	
-	const char *small_str = "Foo_";
-	size_t len = 20;
-	const char *result;
-	const char *ft_result;
-	result = strnstr(large_str, small_str, len);
-	ft_result = ft_strnstr(large_str, small_str, len);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str, len, result);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str, len, ft_result);
-	printf("\n");
-	
-	const char *small_str1 = "Bar_B";
-	size_t len1 = 15;
-	const char *result1;
-	const char *ft_result1;
-	result1 = strnstr(large_str, small_str1, len1);
-	ft_result1 = ft_strnstr(large_str, small_str1, len1);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str1, len1, result1);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str1, len1, ft_result1);
-	printf("\n");
-	
-	const char *small_str2 = "Baz";
-	size_t len2 = 20;
-	const char *result2;
-	const char *ft_result2;
-	result2 = strnstr(large_str, small_str2, len2);
-	ft_result2 = ft_strnstr(large_str, small_str2, len2);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str2, len2, result2);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str2, len2, ft_result2);
-	printf("\n");
-	
-	const char *small_str3 = "Bar";
-	size_t len3 = 3;
-	const char *result3;
-	const char *ft_result3;
-	result3 = strnstr(large_str, small_str3, len3);
-	ft_result3 = ft_strnstr(large_str, small_str3, len3);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str3, len3, result3);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str3, len3, ft_result3);
-	printf("\n");
-	
-	const char *small_str4 = "Bar";
-	size_t len4 = 7;
-	const char *result4;
-	const char *ft_result4;
-	result4 = strnstr(large_str, small_str4, len4);
-	ft_result4 = ft_strnstr(large_str, small_str4, len4);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str4, len4, result4);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str4, len4, ft_result4);
-	printf("\n");
-	
-	const char *small_str5 = "Foo";
-	size_t len5 = 3;
-	const char *result5;
-	const char *ft_result5;
-	result5 = strnstr(large_str, small_str5, len5);
-	ft_result5 = ft_strnstr(large_str, small_str5, len5);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str5, len5, result5);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str5, len5, ft_result5);
-	printf("\n");
-	
-	const char *small_str6 = "Foo";
-	size_t len6 = 2;
-	const char *result6;
-	const char *ft_result6;
-	result6 = strnstr(large_str, small_str6, len6);
-	ft_result6 = ft_strnstr(large_str, small_str6, len6);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str6, len6, result6);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str6, len6, ft_result6);
-	printf("\n");
-	
-	const char *small_str7 = "Foo_Bar_Baz";
-	size_t len7 = 10;
-	const char *result7;
-	const char *ft_result7;
-	result7 = strnstr(large_str, small_str7, len7);
-	ft_result7 = ft_strnstr(large_str, small_str7, len7);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str7, len7, result7);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str7, len7, ft_result7);
-	printf("\n");
-	
-	const char *small_str8 = "Foo_Bar_Baz";
-	size_t len8 = 11;
-	const char *result8;
-	const char *ft_result8;
-	result8 = strnstr(large_str, small_str8, len8);
-	ft_result8 = ft_strnstr(large_str, small_str8, len8);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str8, len8, result8);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str8, len8, ft_result8);
-	printf("\n");
-	
-	const char *small_str9 = "Foo_Bar_Baz";
-	size_t len9 = 12;
-	const char *result9;
-	const char *ft_result9;
-	result9 = strnstr(large_str, small_str9, len9);
-	ft_result9 = ft_strnstr(large_str, small_str9, len9);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str9, len9, result9);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str9, len9, ft_result9);
-	printf("\n");
-	
-	const char *small_str10 = "Foo_Bar_Baz_";
-	size_t len10 = 11;
-	const char *result10;
-	const char *ft_result10;
-	result10 = strnstr(large_str, small_str10, len10);
-	ft_result10 = ft_strnstr(large_str, small_str10, len10);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str10, len10, result10);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str10, len10, ft_result10);
-	printf("\n");
-
-	const char *small_str11 = "Foo_Bar_Baz_";
-	size_t len11 = 12;
-	const char *result11;
-	const char *ft_result11;
-	result11 = strnstr(large_str, small_str11, len11);
-	ft_result11 = ft_strnstr(large_str, small_str11, len11);
-	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str11, len11, result11);
-	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str11, len11, ft_result11);
-	printf("\n");
+	/* const char *large_str = "Foo_Bar_Baz"; */
+	/*  */
+	/* const char *small_str = "Foo_"; */
+	/* size_t len = 20; */
+	/* const char *result; */
+	/* const char *ft_result; */
+	/* result = strnstr(large_str, small_str, len); */
+	/* ft_result = ft_strnstr(large_str, small_str, len); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str, len, result); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str, len, ft_result); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str1 = "Bar_B"; */
+	/* size_t len1 = 15; */
+	/* const char *result1; */
+	/* const char *ft_result1; */
+	/* result1 = strnstr(large_str, small_str1, len1); */
+	/* ft_result1 = ft_strnstr(large_str, small_str1, len1); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str1, len1, result1); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str1, len1, ft_result1); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str2 = "Baz"; */
+	/* size_t len2 = 20; */
+	/* const char *result2; */
+	/* const char *ft_result2; */
+	/* result2 = strnstr(large_str, small_str2, len2); */
+	/* ft_result2 = ft_strnstr(large_str, small_str2, len2); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str2, len2, result2); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str2, len2, ft_result2); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str3 = "Bar"; */
+	/* size_t len3 = 3; */
+	/* const char *result3; */
+	/* const char *ft_result3; */
+	/* result3 = strnstr(large_str, small_str3, len3); */
+	/* ft_result3 = ft_strnstr(large_str, small_str3, len3); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str3, len3, result3); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str3, len3, ft_result3); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str4 = "Bar"; */
+	/* size_t len4 = 7; */
+	/* const char *result4; */
+	/* const char *ft_result4; */
+	/* result4 = strnstr(large_str, small_str4, len4); */
+	/* ft_result4 = ft_strnstr(large_str, small_str4, len4); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str4, len4, result4); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str4, len4, ft_result4); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str5 = "Foo"; */
+	/* size_t len5 = 3; */
+	/* const char *result5; */
+	/* const char *ft_result5; */
+	/* result5 = strnstr(large_str, small_str5, len5); */
+	/* ft_result5 = ft_strnstr(large_str, small_str5, len5); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str5, len5, result5); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str5, len5, ft_result5); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str6 = "Foo"; */
+	/* size_t len6 = 2; */
+	/* const char *result6; */
+	/* const char *ft_result6; */
+	/* result6 = strnstr(large_str, small_str6, len6); */
+	/* ft_result6 = ft_strnstr(large_str, small_str6, len6); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str6, len6, result6); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str6, len6, ft_result6); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str7 = "Foo_Bar_Baz"; */
+	/* size_t len7 = 10; */
+	/* const char *result7; */
+	/* const char *ft_result7; */
+	/* result7 = strnstr(large_str, small_str7, len7); */
+	/* ft_result7 = ft_strnstr(large_str, small_str7, len7); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str7, len7, result7); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str7, len7, ft_result7); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str8 = "Foo_Bar_Baz"; */
+	/* size_t len8 = 11; */
+	/* const char *result8; */
+	/* const char *ft_result8; */
+	/* result8 = strnstr(large_str, small_str8, len8); */
+	/* ft_result8 = ft_strnstr(large_str, small_str8, len8); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str8, len8, result8); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str8, len8, ft_result8); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str9 = "Foo_Bar_Baz"; */
+	/* size_t len9 = 12; */
+	/* const char *result9; */
+	/* const char *ft_result9; */
+	/* result9 = strnstr(large_str, small_str9, len9); */
+	/* ft_result9 = ft_strnstr(large_str, small_str9, len9); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str9, len9, result9); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str9, len9, ft_result9); */
+	/* printf("\n"); */
+	/*  */
+	/* const char *small_str10 = "Foo_Bar_Baz_"; */
+	/* size_t len10 = 11; */
+	/* const char *result10; */
+	/* const char *ft_result10; */
+	/* result10 = strnstr(large_str, small_str10, len10); */
+	/* ft_result10 = ft_strnstr(large_str, small_str10, len10); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str10, len10, result10); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str10, len10, ft_result10); */
+	/* printf("\n"); */
+    /*  */
+	/* const char *small_str11 = "Foo_Bar_Baz_"; */
+	/* size_t len11 = 12; */
+	/* const char *result11; */
+	/* const char *ft_result11; */
+	/* result11 = strnstr(large_str, small_str11, len11); */
+	/* ft_result11 = ft_strnstr(large_str, small_str11, len11); */
+	/* printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str11, len11, result11); */
+	/* printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str11, len11, ft_result11); */
+	/* printf("\n"); */
 
 
 	printf("-----------------------------\n");
@@ -1236,10 +1236,10 @@ void test_calloc(void)
 	i = 0;
 	while (i <= n)
 	{
-		arr[i] = 42;
+		ft_arr[i] = 42;
 		i++;
 	}
-	printf("ft_arr: %s\n", arr);
+	printf("ft_arr: %s\n", ft_arr);
 
 
 
@@ -1397,6 +1397,167 @@ void test_ft_strtrim(void)
 
 }
 
+void test_ft_itoa(void)
+{
+
+	printf("\n");
+	
+	printf("ft_itoa____________________\n");
+
+	long int min_int = 1 << 31;
+	long int max_int = ~(1 << 31);
+	
+	int num = 0;
+	int num1 = 7;
+	int num2 = -7;
+	int num3 = 1234;
+	int num4 = -1234;
+	int num5 = 100;
+	int num6 = -100;
+
+	printf("%d --- %s\n", num, ft_itoa(num));	
+	printf("%d --- %s\n", num1, ft_itoa(num1));	
+	printf("%d --- %s\n", num2, ft_itoa(num2));	
+	printf("%d --- %s\n", num3, ft_itoa(num3));	
+	printf("%d --- %s\n", num4, ft_itoa(num4));	
+	printf("%d --- %s\n", num5, ft_itoa(num5));	
+	printf("%d --- %s\n", num6, ft_itoa(num6));	
+	printf("%ld --- %s\n", min_int + 1, ft_itoa(min_int + 1));	
+	printf("%ld --- %s\n", max_int - 1, ft_itoa(max_int - 1));	
+	printf("%ld --- %s\n", min_int, ft_itoa(min_int));	
+	printf("%ld --- %s\n", max_int, ft_itoa(max_int));	
+	
+
+
+
+
+	printf("-----------------------------\n");
+
+	
+
+}
+
+//char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+
+char change_symb(unsigned int i, char symbol)
+{
+	return (symbol + i);
+}
+
+void test_ft_strmapi(void)
+{
+
+	printf("\n");
+	
+	printf("ft_memcpy____________________\n");
+	
+	char *str = "12345";
+	printf("%s %s\n",str, ft_strmapi(str, &change_symb));	
+	
+	printf("-----------------------------\n");
+
+	
+}
+
+void test_ft_putchar_fd(void)
+{
+
+	printf("\n");
+	
+	printf("ft_putchar_fd____________________\n");
+	
+	printf("\n");	
+	ft_putchar_fd('+', 1);	
+	printf("\n");	
+
+	printf("-----------------------------\n");
+
+	
+}
+
+void test_ft_putstr_fd(void)
+{
+
+	printf("\n");
+	
+	printf("ft_memcpy____________________\n");
+
+	printf("\n");	
+	ft_putstr_fd("!OK_ok_OK!", 1);
+	printf("\n");	
+
+	printf("-----------------------------\n");
+
+	
+}
+
+void test_ft_putendl_fd(void)
+{
+
+	printf("\n");
+	
+	printf("ft_memcpy____________________\n");
+	
+	printf("\n");
+	ft_putendl_fd("new str--->", 1);
+	printf("<---\n");	
+	printf("\n");
+
+	printf("-----------------------------\n");
+
+	
+}
+
+void test_ft_putnbr_fd(void)
+{
+
+	printf("\n");
+	
+	printf("ft_putnbr_fd____________________\n");
+	
+	//ft_putnbr_fd(0 ,1);
+	
+	long int min_int = 1 << 31;
+	long int max_int = ~(1 << 31);
+	
+	int num = 0;
+	int num1 = 7;
+	int num2 = -7;
+	int num3 = 1234;
+	int num4 = -1234;
+	int num5 = 100;
+	int num6 = -100;
+
+	ft_putnbr_fd(num, 1);
+	printf("\n");
+	ft_putnbr_fd(num1, 1);
+	printf("\n");
+	ft_putnbr_fd(num2, 1);
+	printf("\n");
+	ft_putnbr_fd(num3, 1);
+	printf("\n");
+	ft_putnbr_fd(num4, 1);
+	printf("\n");
+	ft_putnbr_fd(num5, 1);
+	printf("\n");
+	ft_putnbr_fd(num6, 1);
+	printf("\n");
+	
+	ft_putnbr_fd((min_int + 1), 1);	
+	printf("\n");
+	ft_putnbr_fd((max_int - 1), 1);	
+	printf("\n");
+	ft_putnbr_fd((min_int), 1);	
+	printf("\n");
+	ft_putnbr_fd((max_int), 1);	
+
+	printf("\n");
+	printf("-----------------------------\n");
+
+	
+}
+
 
 void test(void)
 {
@@ -1406,10 +1567,10 @@ void test(void)
 	printf("ft_memcpy____________________\n");
 	
 	
+	printf("\n");
 	printf("-----------------------------\n");
 
 	
-
 }
 
 
@@ -1443,7 +1604,12 @@ int main (void)
 
 	// part 2
 	/* test_ft_substr(); */
-	/*test_ft_strjoin(); */
-	test_ft_strtrim();
-
+	/* test_ft_strjoin(); */
+	/* test_ft_strtrim(); */
+	/* test_ft_itoa(); */
+	/* test_ft_strmapi(); */
+	/* test_ft_putchar_fd(); */
+	/* test_ft_putstr_fd(); */
+	/* test_ft_putendl_fd(); */
+	test_ft_putnbr_fd();
 }

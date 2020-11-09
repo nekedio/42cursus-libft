@@ -34,9 +34,9 @@ Additional functions:
 - [x] ft_strjoin
 - [x] ft_strtrim
 - [ ] ft_split
-- [ ] ft_itoa
-- [ ] ft_strmapi
-- [ ] ft_putchar_fd
-- [ ] ft_putstr_fd
-- [ ] ft_putendl_fd
-- [ ] ft_putnbr_fd
+- [x] ft_itoa
+- [x] ft_strmapi
+- [x] ft_putchar_fd
+- [x] ft_putstr_fd
+- [x] ft_putendl_fd
+- [x] ft_putnbr_fd
