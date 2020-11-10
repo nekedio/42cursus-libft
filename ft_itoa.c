@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/10 17:58:48 by dxenophi          #+#    #+#             */
+/*   Updated: 2020/11/10 18:03:04 by dxenophi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int mod(int num)
+static int			mod(int num)
 {
 	if (num < 0)
-		return num * (-1);
-	return num;
+		return (num * (-1));
+	return (num);
 }
 
-static int numlen(int num)
+static int			numlen(int num)
 {
-	int res;
-	int counter;
-	int byte_sign;
+	int				res;
+	int				counter;
+	int				byte_sign;
 
 	if (num == 0)
 		return (1);
@@ -31,12 +43,12 @@ static int numlen(int num)
 	return (counter + byte_sign);
 }
 
-static char *fill_str(char *str, int num)
+static char			*fill_str(char *str, int num)
 {
-	int len;
-	int i;
-	char chr;
-	int mod_num;
+	int				len;
+	int				i;
+	char			chr;
+	int				mod_num;
 
 	len = numlen(num);
 	mod_num = mod(num);
@@ -53,16 +65,15 @@ static char *fill_str(char *str, int num)
 		str[len - 1] = '-';
 	}
 	return (str);
-
 }
 
-static char *str_revers(char *str, int len)
+static char			*str_revers(char *str, int len)
 {
-	char temp;
-	int i;
-	i = 0;
+	char			temp;
+	int				i;
 
-	while (i < len/2)
+	i = 0;
+	while (i < len / 2)
 	{
 		temp = str[i];
 		str[i] = str[len - 1 - i];
@@ -72,10 +83,11 @@ static char *str_revers(char *str, int len)
 	return (str);
 }
 
-char *ft_itoa(int num)
+char				*ft_itoa(int num)
 {
-	int len;
-	char *result;
+	int				len;
+	char			*result;
+
 	if (num == -2147483648)
 	{
 		result = (char *)malloc(sizeof(*result) * 11 + 1);
@@ -87,7 +99,7 @@ char *ft_itoa(int num)
 	len = numlen(num);
 	result = (char *)malloc(sizeof(*result) * len + 1);
 	if (!result)
-		return (NULL);	
+		return (NULL);
 	result = fill_str(result, num);
 	result = str_revers(result, len);
 	result[len] = '\0';

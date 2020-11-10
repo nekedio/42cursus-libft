@@ -25,9 +25,37 @@ files = libft.h\
 		ft_strdup.c\
 		ft_substr.c\
 		ft_strjoin.c\
-		ft_strtrim.c
+		ft_strtrim.c\
+		ft_itoa.c\
+		ft_strmapi.c\
+		ft_putchar_fd.c\
+		ft_putstr_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd.c\
+
+flags = -Wall -Werror -Wextra
 
 lib = libft.h
+
+obj = $(files:.c=.o)
+
+all: $(NAME) 
+
+%.o: %.c
+	gcc $(FLAGS) -c -I ./ -c $< -o $@
+
+$(NAME):$(obj)
+	ar rc $@ $<
+	ranlib $(NAME)
+
+clean:
+	rm -f $(odj)
+
+fclean: clean
+	rm -f $(NAME)
+
+re:	fclean all
+
 
 gcr:
 	gcc $(lib) *.c
@@ -43,3 +71,5 @@ gccr: gcc run
 
 norm:
 	norminette -R CheckForbiddenSourceHeader $(files)
+
+.PHONY: clean fclean all re bonus

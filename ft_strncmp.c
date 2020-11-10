@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/10 18:15:09 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/10 18:18:24 by dxenophi         ###   ########.fr       */
+/*   Created: 2020/11/10 18:21:14 by dxenophi          #+#    #+#             */
+/*   Updated: 2020/11/10 18:22:37 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+int					ft_strncmp(const char *str1, const char *str2, size_t len)
 {
-	write(fd, str, ft_strlen(str));
+	size_t			i;
+	unsigned char	*ft_str1;
+	unsigned char	*ft_str2;
+
+	ft_str1 = (unsigned char *)str1;
+	ft_str2 = (unsigned char *)str2;
+	i = 0;
+	while (ft_str1[i] && ft_str2[i] && i < len - 1)
+	{
+		i++;
+	}
+	return (ft_str1[i] - ft_str2[i]);
 }
