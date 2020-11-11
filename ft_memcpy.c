@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 18:47:15 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/05 19:07:06 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/11 15:13:11 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t size)
 	unsigned char	*ft_src;
 	size_t			i;
 
+	if (!dst && !src)
+		return (NULL);
 	ft_dst = (unsigned char *)dst;
 	ft_src = (unsigned char *)src;
 	i = 0;

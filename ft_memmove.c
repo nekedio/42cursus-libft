@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 11:56:18 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/02 11:58:25 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/11 16:19:55 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void		*ft_memmove(void *dst, const void *src, size_t len)
 	char	*ft_src;
 	size_t	i;
 
+	if (!dst && !src)
+		return (NULL);
 	ft_src = (char *)src;
 	ft_dst = (char *)dst;
 	i = 0;

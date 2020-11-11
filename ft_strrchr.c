@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 17:26:51 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/05 19:11:40 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/11 16:56:07 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*ft_strrchr(const char *str, int chr)
 
 	ft_str = (char *)str;
 	len_str = ft_strlen(ft_str);
-	while (len_str > 0)
+	while (len_str + 1 > 0)
 	{
 		if (ft_str[len_str] == chr)
 			return (ft_str + len_str);

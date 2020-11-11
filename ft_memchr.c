@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:13:28 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/02 12:15:32 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/11 16:26:38 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void				*ft_memchr(const void *src, int symbol, size_t size)
 	i = 0;
 	while (i < size - 1)
 	{
-		if (*ft_src++ == symbol)
+		if (ft_src[i] == (unsigned char)symbol)
 		{
-			return (ft_src - 1);
+			return (ft_src + i);
 		}
 		i++;
 	}

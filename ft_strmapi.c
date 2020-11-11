@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 18:04:57 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/10 18:16:24 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/11 19:01:15 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char				*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*result;
 
-	result = (char *)malloc(sizeof(result) * ft_strlen(str) + 1);
+	if (!str)
+		return (NULL);
+	result = (char *)malloc(sizeof(*result) * (ft_strlen(str) + 1));
 	if (!result)
 		return (NULL);
 	i = 0;

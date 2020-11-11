@@ -64,14 +64,14 @@ re: fclean all
 
 
 gcr:
-	gcc ${lib} *.c
-	./a.out
+	@gcc ${lib} ${src} main.c
+	@./a.out
 
 gcc:
-	gcc -Wall -Werror -Wextra ${lib} ${src}
+	@gcc ${flags} ${lib} ${src} main.c
 
 run:
-	./a.out
+	@./a.out
 
 gccr: gcc run
 

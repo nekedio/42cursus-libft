@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 14:47:47 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/05 19:08:52 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/11 16:00:08 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	*ft_memccpy(void *dst, const void *src, int symbol, size_t size)
 	i = 0;
 	while (i < size)
 	{
-		*ft_dst++ = *ft_src++;
-		if (*ft_src - 1 == symbol)
+		ft_dst[i] = ft_src[i];
+		if (ft_src[i] == (unsigned char)symbol)
 		{
-			return (ft_dst);
+			return (ft_dst + i + 1);
 		}
 		i++;
 	}

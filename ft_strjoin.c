@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 19:09:36 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/07 20:00:16 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/11 18:54:53 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char				*ft_strjoin(char const *str1, char const *str2)
 	char			*result;
 	unsigned int	counter;
 
+	if (!str1 || !str2)
+		return (NULL);
 	sum_str = ft_strlen(str1) + ft_strlen(str2);
 	result = (char *)malloc(sizeof(result) * sum_str + 1);
 	if (!result || !str1 || !str2)
