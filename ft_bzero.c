@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 15:57:06 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/02 11:49:38 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/10 19:57:30 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *arr, size_t size)
 {
-	ft_memset(arr, '*', size);
+	ft_memset(arr, 0, size);
 }

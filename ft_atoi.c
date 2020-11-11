@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 19:29:43 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/05 19:35:19 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/10 21:21:08 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int				ft_atoi(const char *str)
 {
-	long long	i;
-	long long	sign;
-	long long	result;
-	long long	num;
+	long	i;
+	long	sign;
+	long	result;
+	long	num;
 
 	i = 0;
 	sign = 1;

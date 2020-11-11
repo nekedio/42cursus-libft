@@ -931,6 +931,16 @@ void test_atoi(void)
 	printf("atoi(%s) = %d\n", str2, atoi(str2));
 	printf("ft_atoi(%s) = %d\n", str2, ft_atoi(str2));
 	printf("\n");
+
+	char *str10 = "-2147483649";
+	printf("atoi(%s) = %d\n", str10, atoi(str10));
+	printf("ft_atoi(%s) = %d\n", str10, ft_atoi(str10));
+	printf("\n");
+
+	char *str11 = "2147483648";
+	printf("atoi(%s) = %d\n", str11, atoi(str11));
+	printf("ft_atoi(%s) = %d\n", str11, ft_atoi(str11));
+	printf("\n");
 	
 	
 	
@@ -1591,7 +1601,7 @@ int main (void)
 	/* test_strrchr(); */
 	/* test_strnstr(); //bsd */
 	/* test_strncmp(); */
-	/* test_atoi(); */
+	test_atoi();
 	/* test_isalpha(); */
 	/* test_isdigit(); */
 	/* test_isalnum(); */
@@ -1611,5 +1621,5 @@ int main (void)
 	/* test_ft_putchar_fd(); */
 	/* test_ft_putstr_fd(); */
 	/* test_ft_putendl_fd(); */
-	test_ft_putnbr_fd();
+	/* test_ft_putnbr_fd(); */
 }
