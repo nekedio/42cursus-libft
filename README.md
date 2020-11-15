@@ -42,7 +42,7 @@
 - [x] ft_putendl_fd
 - [x] ft_putnbr_fd
 
-Tests:
+### Tests:
 ##### https://github.com/alelievr/libft-unit-test
 ##### https://github.com/jtoty/Libftest
 ##### https://github.com/ska42/libft-war-machine
