@@ -840,10 +840,9 @@ void test_strnstr(void)
 	printf("ft_strnstr(%s, %s, %zu) = %s\n", s1, s2, max, i2);
 	printf("\n");
 
+	printf("   strnstr(\"lorem ipsum dolor sit amet\", \"dolor\", 0) = %s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 0));
+	printf("ft_strnstr(\"lorem ipsum dolor sit amet\", \"dolor\", 0) = %s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0));
 
-	printf("-----------------------------\n");
-
-	
 
 }
 
@@ -856,14 +855,14 @@ void test_strncmp(void)
 	char *str1 = "qwerty";
 	char *str2 = "qwerty";
 	size_t len = 3;
-	printf("strncmp(%s, %s, %ld) = %d\n", str1, str2, len,  strncmp(str1, str2, len));	
+	printf("   strncmp(%s, %s, %ld) = %d\n", str1, str2, len,  strncmp(str1, str2, len));	
 	printf("ft_strncmp(%s, %s, %ld) = %d\n", str1, str2, len,  ft_strncmp(str1, str2, len));
 	printf("\n");
 	
 	char *str11 = "qwerty";
 	char *str12 = "qwerty";
 	size_t len1 = 100;
-	printf("strncmp(%s, %s, %ld) = %d\n", str11, str12, len1,  strncmp(str11, str12, len1));
+	printf("   strncmp(%s, %s, %ld) = %d\n", str11, str12, len1,  strncmp(str11, str12, len1));
 	printf("ft_strncmp(%s, %s, %ld) = %d\n", str11, str12, len1,  ft_strncmp(str11, str12, len1));
 	printf("\n");
 	
@@ -871,7 +870,7 @@ void test_strncmp(void)
 	char *str21 = "qwerty";
 	char *str22 = "qwerty";
 	size_t len2 = 0;
-	printf("strncmp(%s, %s, %ld) = %d\n", str21, str22, len2,  strncmp(str21, str22, len2));
+	printf("   strncmp(%s, %s, %ld) = %d\n", str21, str22, len2,  strncmp(str21, str22, len2));
 	printf("ft_strncmp(%s, %s, %ld) = %d\n", str21, str22, len2,  ft_strncmp(str21, str22, len2));
 	printf("\n");
 	
@@ -879,7 +878,7 @@ void test_strncmp(void)
 	char *str31 = "qwerty";
 	char *str32 = "qwfrty";
 	size_t len3 = 2;
-	printf("strncmp(%s, %s, %ld) = %d\n", str31, str32, len3,  strncmp(str31, str32, len3));
+	printf("   strncmp(%s, %s, %ld) = %d\n", str31, str32, len3,  strncmp(str31, str32, len3));
 	printf("ft_strncmp(%s, %s, %ld) = %d\n", str31, str32, len3,  ft_strncmp(str31, str32, len3));
 	printf("\n");
 	
@@ -887,7 +886,7 @@ void test_strncmp(void)
 	char *str41 = "qwerty";
 	char *str42 = "qwfrty";
 	size_t len4 = 3;
-	printf("strncmp(%s, %s, %ld) = %d\n", str41, str42, len4,  strncmp(str41, str42, len4));
+	printf("   strncmp(%s, %s, %ld) = %d\n", str41, str42, len4,  strncmp(str41, str42, len4));
 	printf("ft_strncmp(%s, %s, %ld) = %d\n", str41, str42, len4,  ft_strncmp(str41, str42, len4));
 	printf("\n");
 	
@@ -895,24 +894,39 @@ void test_strncmp(void)
 	char *str51 = "qwfrty";
 	char *str52 = "qwerty";
 	size_t len5 = 3;
-	printf("strncmp(%s, %s, %ld) = %d\n", str51, str52, len5,  strncmp(str51, str52, len5));
+	printf("   strncmp(%s, %s, %ld) = %d\n", str51, str52, len5,  strncmp(str51, str52, len5));
 	printf("ft_strncmp(%s, %s, %ld) = %d\n", str51, str52, len5,  ft_strncmp(str51, str52, len5));
 	printf("\n");
 	
 	char *str61 = "qwert";
 	char *str62 = "qwe";
 	size_t len6 = 6;
-	printf("strncmp(%s, %s, %ld) = %d\n", str61, str62, len6,  strncmp(str61, str62, len6));
+	printf("   strncmp(%s, %s, %ld) = %d\n", str61, str62, len6,  strncmp(str61, str62, len6));
 	printf("ft_strncmp(%s, %s, %ld) = %d\n", str61, str62, len6,  ft_strncmp(str61, str62, len6));
 	printf("\n");
 	
 	char *str71 = "qwe";
 	char *str72 = "qwerty";
 	size_t len7 = 6;
-	printf("strncmp(%s, %s, %ld) = %d\n", str71, str72, len7,  strncmp(str71, str72, len7));
+	printf("   strncmp(%s, %s, %ld) = %d\n", str71, str72, len7,  strncmp(str71, str72, len7));
 	printf("ft_strncmp(%s, %s, %ld) = %d\n", str71, str72, len7,  ft_strncmp(str71, str72, len7));
 	printf("\n");
+
+	printf("   strncmp(\"test\", \"tEst\", 4) = %d\n", strncmp("test", "tEst", 4));
+	printf("ft_strncmp(\"test\", \"tEst\", 4) = %d\n", ft_strncmp("test", "tEst", 4));
+	printf("\n");
+
+	printf("   strncmp(\"zyxbcdefgh\", \"abcdwxyz\", 0) = %d\n", strncmp("zyxbcdefgh", "abcdwxyz", 0));
+	printf("ft_strncmp(\"zyxbcdefgh\", \"abcdwxyz\", 0) = %d\n", ft_strncmp("zyxbcdefgh", "abcdwxyz", 0));
+	printf("\n");
+
+	printf("   strncmp(\"abcdefgh\", \"\", 0) = %d\n", strncmp("abcdefgh", "", 0));
+	printf("ft_strncmp(\"abcdefgh\", \"\", 0) = %d\n", ft_strncmp("abcdefgh", "", 0));
+	printf("\n");
 	
+	printf("   strncmp(\"atoms\\0\\0\\0\\0\", \"atoms\\0abc\", 8) = %d\n", strncmp("atoms\0\0\0\0", "atoms\0abc", 8));
+	printf("ft_strncmp(\"atoms\\0\\0\\0\\0\", \"atoms\\0abc\", 8) = %d\n", ft_strncmp("atoms\0\0\0\0", "atoms\0abc", 8));
+	printf("\n");
 
 	//printf("-----------------------------\n");
 
@@ -1721,7 +1735,7 @@ int main (void)
 	/* test_strlcat(); //bsd */
 	/* test_strchr(); */
 	/* test_strrchr(); */
-	/* test_strnstr(); //bsd */
+	test_strnstr(); //bsd
 	/* test_strncmp(); */
 	/* test_atoi(); */
 	/* test_isalpha(); */
@@ -1744,5 +1758,5 @@ int main (void)
 	/* test_ft_putstr_fd(); */
 	/* test_ft_putendl_fd(); */
 	/* test_ft_putnbr_fd(); */
-	test_ft_split();
+	/* test_ft_split(); */
 }

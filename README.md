@@ -33,7 +33,7 @@ Additional functions:
 - [x] ft_substr
 - [x] ft_strjoin
 - [x] ft_strtrim
-- [ ] ft_split
+- [x] ft_split
 - [x] ft_itoa
 - [x] ft_strmapi
 - [x] ft_putchar_fd

@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 13:03:51 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/11 17:35:43 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/15 17:06:01 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char		*ft_strnstr(const char *large_str, const char *small_str,
 	char	*ft_large_str;
 
 	ft_large_str = (char *)large_str;
-	if (len == 0)
+	if (!len && !ft_strlen(small_str))
 		return (ft_large_str);
 	i = 0;
 	while (ft_large_str[i] && i < len)

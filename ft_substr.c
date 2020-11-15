@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 17:31:52 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/11 18:52:44 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/15 17:12:24 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char				*ft_substr(char const *str, unsigned int start, size_t len)
 	result = (char *)malloc(sizeof(*result) * (len + 1));
 	if (!result)
 		return (NULL);
-	if (len == 0 || str_len < len + start)
+	if (str_len < len + start)
 		return (NULL);
 	i = 0;
 	j = start;

@@ -6,24 +6,11 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 18:03:19 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/15 13:32:07 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/15 15:16:51 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* static void				free_arr(char **arr, int c_word) */
-/* { */
-/* 	int					i; */
-/*  */
-/* 	i = c_word; */
-/* 	while (i >= 0) */
-/* 	{ */
-/* 		free(arr[i]); */
-/* 		i--; */
-/* 	} */
-/* 	free(arr); */
-/* } */
 
 static unsigned int		search_first_occ(char const *str, char symbol,
 		int num_word)
@@ -151,13 +138,10 @@ char					**ft_split(char const *str, char chr)
 	while (i < c_words)
 	{
 		result[i] = get_word(str, chr, i + 1);
-		if (!result)
+		if (!result[i])
 		{
-			while (i >= 0)
-			{
-				free(arr[i]);
-				i--;
-			}
+			while (--i >= 0)
+				free(result[i]);
 			free(result);
 			return (NULL);
 		}
