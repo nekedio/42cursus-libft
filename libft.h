@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:02:48 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/07 17:35:24 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/15 13:12:20 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void	ft_putchar_fd(char chr, int fd);
 void	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int num, int fd);
+char	**ft_split(char const *s, char c);
 
 #endif

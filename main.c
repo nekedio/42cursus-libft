@@ -981,7 +981,16 @@ void test_atoi(void)
 	printf("atoi(%s) = %d\n", str11, atoi(str11));
 	printf("ft_atoi(%s) = %d\n", str11, ft_atoi(str11));
 	printf("\n");
-	
+
+	char *str12 = "-99999999999999999999999999";
+	printf("atoi(%s) = %d\n", str12, atoi(str12));
+	printf("ft_atoi(%s) = %d\n", str12, ft_atoi(str12));
+	printf("\n");
+
+	char *str13 = "99999999999999999999999999";
+	printf("atoi(%s) = %d\n", str13, atoi(str13));
+	printf("ft_atoi(%s) = %d\n", str13, ft_atoi(str13));
+	printf("\n");
 	
 	
 	printf("-----------------------------\n");
@@ -1453,6 +1462,14 @@ void test_ft_strtrim(void)
 	result4 = ft_strtrim(str4, set4);
 	printf("ft_strtrim(%s, %s) = %s\n", str4, set4, result4);
 
+	char *str5 = "";
+	char *set5 = "qwe";
+	char *result5;
+	result5 = ft_strtrim(str5, set5);
+	printf("ft_strtrim(%s, %s) = %s\n", str5, set5, result5);
+
+
+
 	printf("-----------------------------\n");
 
 	
@@ -1620,6 +1637,59 @@ void test_ft_putnbr_fd(void)
 	
 }
 
+void test_ft_split(void)
+{
+
+	printf("\n");
+	
+	printf("ft_split____________________\n");
+
+	int i;
+
+	char    *string = "***split*****thiis*for*me*!******";
+	char    **result;
+	char	chr = '*';
+	result = ft_split(string, chr);	
+	printf("ft_split(%s, %c) = \n", string, chr);
+	i = 0;
+	if (result == NULL)
+	{
+		printf("NULL\n");
+		return ;
+	}
+	while (result[i])
+	{
+		printf("[%d] => %s\n", i, result[i]); 
+		i++;
+	}
+
+	printf("\n");
+
+	char    *string1 = "split******";
+	char    **result1;
+	char	chr1 = '*';
+	result1 = ft_split(string1, chr);	
+	printf("ft_split(%s, %c) = \n", string1, chr1);
+	i = 0;
+	if (result1 == NULL)
+	{
+		printf("NULL\n");
+		return ;
+	}
+	while (result1[i])
+	{
+		printf("[%d] => %s\n", i, result1[i]); 
+		i++;
+	}
+
+
+
+
+
+	printf("-----------------------------\n");
+
+	
+}
 
 void test(void)
 {
@@ -1643,15 +1713,15 @@ int main (void)
 	/* test_bzero(); */
 	/* test_memcpy(); */
 	/* test_memccpy(); */
-	//test_memmove();
-	//test_memchr();
+	/* test_memmove(); */
+	/* test_memchr(); */
 	/* test_memcmp(); */
-	// test_strlen();
+	/* test_strlen(); */
 	/* test_strlcpy(); //bsd */
 	/* test_strlcat(); //bsd */
 	/* test_strchr(); */
-	//test_strrchr();
-	//test_strnstr(); //bsd
+	/* test_strrchr(); */
+	/* test_strnstr(); //bsd */
 	/* test_strncmp(); */
 	/* test_atoi(); */
 	/* test_isalpha(); */
@@ -1667,11 +1737,12 @@ int main (void)
 	// part 2
 	/* test_ft_substr(); */
 	/* test_ft_strjoin(); */
-	test_ft_strtrim();
+	/* test_ft_strtrim(); */
 	/* test_ft_itoa(); */
 	/* test_ft_strmapi(); */
 	/* test_ft_putchar_fd(); */
 	/* test_ft_putstr_fd(); */
 	/* test_ft_putendl_fd(); */
 	/* test_ft_putnbr_fd(); */
+	test_ft_split();
 }

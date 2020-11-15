@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 17:33:23 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/11 20:54:30 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/13 14:11:53 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ static unsigned int		search_last_occ(char const *str, char const *set)
 	{
 		i--;
 		p = i + '0';
-		write(1, &p, 1);
+		//write(1, &p, 1);
 	}
-	printf("  %d  ", i);
+	//printf("  %d  ", i);
 	return (i);
 }
 
