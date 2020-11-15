@@ -1,7 +1,7 @@
 # 42cursus-libft
 42cursus-libft
 
-Following features have been recoded:
+### Following features have been recoded:
 - [x] memset
 - [x] bzero
 - [x] memcpy
@@ -25,11 +25,12 @@ Following features have been recoded:
 - [x] toupper
 - [x] tolower
 
-Using the function “malloc”:
+### Using the function “malloc”:
 - [x] calloc
 - [x] strdup
 
-Additional functions:
+
+### Additional functions:
 - [x] ft_substr
 - [x] ft_strjoin
 - [x] ft_strtrim
@@ -40,3 +41,8 @@ Additional functions:
 - [x] ft_putstr_fd
 - [x] ft_putendl_fd
 - [x] ft_putnbr_fd
+
+Tests:
+##### https://github.com/alelievr/libft-unit-test
+##### https://github.com/jtoty/Libftest
+##### https://github.com/ska42/libft-war-machine
