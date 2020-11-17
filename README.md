@@ -42,6 +42,18 @@
 - [x] ft_putendl_fd
 - [x] ft_putnbr_fd
 
+### bonus
+- [x] ft_lstnew.c
+- [x] ft_lstadd_front.c
+- [x] ft_lstsize.c
+- [x] ft_lstlast.c
+- [x] ft_lstadd_back.c
+- [ ] ft_lstdelone
+- [ ] ft_lstclear
+- [ ] ft_lstiter
+- [ ] ft_lstmap
+
+
 ### Tests:
 ##### https://github.com/alelievr/libft-unit-test
 ##### https://github.com/jtoty/Libftest
