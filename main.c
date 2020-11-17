@@ -2,6 +2,8 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+
+/*
 void test_memset(void)
 {
 	unsigned char src1[15] = "0123456789";
@@ -1215,9 +1217,9 @@ void test_isprint(void)
 	else
 		printf("OK\n");
 	
-	/* int symbol = 32; */
-	/* printf("ft_code: %d, %d\n", symbol, ft_isprint(symbol)); */
-	/* printf("code: %d, %d\n", symbol, isprint(symbol)); */
+	// int symbol = 32;
+	// printf("ft_code: %d, %d\n", symbol, ft_isprint(symbol));
+	// printf("code: %d, %d\n", symbol, isprint(symbol));
 
 	printf("-----------------------------\n");
 
@@ -1704,6 +1706,172 @@ void test_ft_split(void)
 
 	
 }
+*/
+
+void test_ft_lstnew(void)
+{
+
+	printf("\n");
+	printf("ft_lstnew____________________\n");
+	printf("\n");
+	
+	char *content = "qwe";
+	t_list *result;
+	result = ft_lstnew(content);
+	printf("%s\n", (char *)result->content);	
+	printf("\n");
+
+	char *content1 = "123";
+	t_list *result1;
+	result1 = ft_lstnew(content1);
+	printf("%s\n", (char *)result1->content);	
+	printf("\n");
+
+
+	printf("-----------------------------\n");
+
+	
+}
+
+void test_ft_lstadd_front(void)
+{
+
+	printf("\n");
+	printf("ft_lstadd_front____________________\n");
+	printf("\n");
+
+	t_list	*frs = ft_lstnew(strdup("111"));
+	t_list	*new = ft_lstnew(strdup("222"));
+
+
+	printf("frs->content = %15s\n", (char *)frs->content);	
+	printf("new->content = %15s\n", (char *)new->content);	
+
+	ft_lstadd_front(&frs, new);	
+	printf("\nft_lstadd_front(&frs, new)\n\n");	
+	
+	printf("new->content = %15s\n", (char *)new->content);	
+	printf("new->next->content = %9s\n", (char *)new->next->content);	
+
+	if (new->next->next == NULL)
+		printf("222 -> 111 -> NULL\n");
+	else
+		printf("222 -> 111 -> not NULL\n");
+
+	printf("-----------------------------\n");
+
+	
+}
+
+
+void test_ft_lstsize(void) {
+
+	printf("\n");
+	
+	printf("ft_lstsize____________________\n");
+
+	
+	t_list	*t_000 = NULL;
+	printf("NULL = %d\n", ft_lstsize(t_000));
+
+	t_list	*lst = ft_lstnew(strdup("111"));	
+	printf("unut 1: 1->null = %d\n", ft_lstsize(lst));
+
+	t_list	*t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&lst, t_222);
+	printf(" add 2: 2->1->null = %d\n", ft_lstsize(lst));
+		
+	t_list	*t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&lst, t_333);
+	printf(" add 3: 3->2->1->null = %d\n", ft_lstsize(lst));
+		
+	
+	printf("\n");
+	printf("-----------------------------\n");
+
+	
+}
+
+void test_ft_lstlast(void) {
+
+	printf("\n");
+	
+	printf("ft_lstlast____________________\n");
+
+	
+	/* t_list	*t_000 = NULL; */
+	/* printf("NULL = %s\n", (char *)(ft_lstlast(t_000)->content)); */
+
+	t_list	*lst = ft_lstnew(strdup("111"));	
+	printf("unut 1: 1->null = %s\n", (char *)(ft_lstlast(lst)->content));
+
+	t_list	*t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&lst, t_222);
+	printf(" add 2: 2->1->null = %s\n", (char *)(ft_lstlast(lst)->content));
+
+	t_list	*t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&lst, t_333);
+	printf(" add 3: 3->2->1->null = %s\n", (char *)(ft_lstlast(lst)->content));
+
+	t_list	*t_444 = ft_lstnew(strdup("444"));
+	ft_lstadd_front(&lst, t_444);
+	printf(" add 4: 4->3->2->1->null = %s\n", (char *)(ft_lstlast(lst)->content));
+
+
+	
+	printf("\n");
+	printf("-----------------------------\n");
+
+	
+}
+
+
+
+
+void test_ft_lstadd_back(void)
+{
+	printf("\n");
+	
+	printf("ft_lstadd_back____________________\n");
+
+
+	t_list	*lst = ft_lstnew(strdup("111"));	
+	t_list	*t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&lst, t_222);
+	t_list	*t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&lst, t_333);
+	t_list	*t_444 = ft_lstnew(strdup("444"));
+	ft_lstadd_front(&lst, t_444);
+
+	printf("\n");
+	
+	t_list	*new = ft_lstnew(strdup("-nEw-"));
+	ft_lstadd_back(&lst, new);	
+
+	printf("\n");
+	while (lst)
+	{
+		printf("%s\n", (char *)lst->content);
+		lst = lst->next;
+	}
+	
+	if (lst  == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+	printf("\n");
+	printf("-----------------------------\n");
+
+
+
+}
+
+
+
+
+
+
 
 void test(void)
 {
@@ -1711,13 +1879,16 @@ void test(void)
 	printf("\n");
 	
 	printf("ft_memcpy____________________\n");
-	
-	
+
+		
 	printf("\n");
 	printf("-----------------------------\n");
 
 	
 }
+
+
+
 
 
 int main (void)
@@ -1735,7 +1906,7 @@ int main (void)
 	/* test_strlcat(); //bsd */
 	/* test_strchr(); */
 	/* test_strrchr(); */
-	test_strnstr(); //bsd
+	/* test_strnstr(); //bsd */
 	/* test_strncmp(); */
 	/* test_atoi(); */
 	/* test_isalpha(); */
@@ -1759,4 +1930,13 @@ int main (void)
 	/* test_ft_putendl_fd(); */
 	/* test_ft_putnbr_fd(); */
 	/* test_ft_split(); */
+
+	// bonus
+	/* test_ft_lstnew(); */
+	/* test_ft_lstadd_front(); */
+	/* test_ft_lstsize(); */
+	/* test_ft_lstlast(); */
+	test_ft_lstadd_back();
+
+
 }

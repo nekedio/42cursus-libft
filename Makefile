@@ -33,7 +33,12 @@ src = ft_memset.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_split.c
+		ft_split.c \
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c
 
 lib = libft.h
 
@@ -51,7 +56,7 @@ ${name}:	${obj}
 	ranlib ${name}
 
 .c.o:
-	gcc ${flags} -I${lib} -c $< -o ${<:.c=.o}
+	gcc ${flags} -I/${lib} -c $< -o ${<:.c=.o}
 
 clean:
 	rm -f ${obj}
@@ -81,7 +86,7 @@ norm:
 
 mc:	fclean
 	@rm -f main.o
-	@rm -f a.ou	
+	@rm -f a.out	
 	@rm -f main.o
 	@rm -f libft.h.gch
 
