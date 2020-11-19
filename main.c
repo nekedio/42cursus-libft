@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 
-/*
+
 void test_memset(void)
 {
 	unsigned char src1[15] = "0123456789";
@@ -1706,7 +1706,6 @@ void test_ft_split(void)
 
 	
 }
-*/
 
 void test_ft_lstnew(void)
 {
@@ -1726,6 +1725,14 @@ void test_ft_lstnew(void)
 	result1 = ft_lstnew(content1);
 	printf("%s\n", (char *)result1->content);	
 	printf("\n");
+
+	t_list *l1;
+  	l1 = ft_lstnew(((void *)0));	
+	printf("%s\n", (char *)l1->content);	
+
+	t_list *l2;
+	l2 = ft_lstnew(NULL);
+	printf("%s\n", (char *)l2->content);	
 
 
 	printf("-----------------------------\n");
@@ -1851,7 +1858,7 @@ void test_ft_lstadd_back(void)
 	printf("\n");
 	while (lst)
 	{
-		printf("%s\n", (char *)lst->content);
+		printf("%s -> ", (char *)lst->content);
 		lst = lst->next;
 	}
 	
@@ -1860,6 +1867,24 @@ void test_ft_lstadd_back(void)
 	else
 		printf("not NULL\n");
 
+
+	t_list  *l =  NULL;
+	t_list  *n = ft_lstnew(strdup("OK"));
+    ft_lstadd_back(&l, n);
+
+	printf("\n");
+	while (l)
+	{
+		printf("%s -> ", (char *)l->content);
+		l = l->next;
+	}
+	
+	if (l == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+
 	printf("\n");
 	printf("-----------------------------\n");
 
@@ -1867,20 +1892,260 @@ void test_ft_lstadd_back(void)
 
 }
 
+void lstdelone_f(void *d)
+{
+     free(d);
+}
+
+void test_ft_lstdelone(void)
+{
+
+	printf("\n");
+	
+	printf("ft_lstdelone____________________\n");
+
+
+	printf("\n");
+	printf("---Before---\n");
+
+
+	t_list	*lst = ft_lstnew(strdup("111"));	
+	t_list	*t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&lst, t_222);
+	t_list	*t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&lst, t_333);
+	
+	while (lst)
+	{
+		printf("%s -> ", (char *)lst->content);
+		lst = lst->next;
+	}
+	
+	if (lst  == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+
+	printf("\n");
+	printf("---After---\n");
+
+
+	t_list	*ft_lst = ft_lstnew(strdup("111"));	
+	t_list	*ft_t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&ft_lst, ft_t_222);
+	t_list	*ft_t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&ft_lst, ft_t_333);
+
+	ft_lstdelone(ft_lst, lstdelone_f);
+
+	while (ft_lst)
+	{
+		printf("%s -> ", (char *)ft_lst->content);
+		ft_lst = ft_lst->next;
+	}
+	
+	if (ft_lst  == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+	printf("\n");
+
+
+	printf("\n");
+	printf("-----------------------------\n");
+
+	
+}
+
+void test_ft_lstclear(void)
+{
+
+	printf("\n");
+	
+	printf("ft_lstclear____________________\n");
+
+	printf("\n");
+	printf("---Before---\n");
+
+
+	t_list	*lst = ft_lstnew(strdup("111"));	
+	t_list	*t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&lst, t_222);
+	t_list	*t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&lst, t_333);
+	
+	while (lst)
+	{
+		printf("%s -> ", (char *)lst->content);
+		lst = lst->next;
+	}
+	
+	if (lst  == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+
+	printf("\n");
+	printf("---After---\n");
+
+
+	t_list	*ft_lst = ft_lstnew(strdup("111"));	
+	t_list	*ft_t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&ft_lst, ft_t_222);
+	t_list	*ft_t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&ft_lst, ft_t_333);
+
+	ft_lstclear(&ft_lst, lstdelone_f);
+
+	while (ft_lst)
+	{
+		printf("%s -> ", (char *)ft_lst->content);
+		ft_lst = ft_lst->next;
+	}
+	
+	if (ft_lst  == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+	printf("\n");
 
 
 
+	printf("\n");
+	printf("-----------------------------\n");
+
+	
+}
+
+void lstiter_f(void *content) {
+     char *s = content;
+     s[0] = 'O';
+     s[1] = 'K';
+}
 
 
+void test_ft_lstiter(void)
+{
 
-void test(void)
+	printf("\n");
+	
+	printf("ft_lstiter____________________\n");
+
+	printf("\n");
+	printf("---Before---\n");
+
+
+	t_list	*lst = ft_lstnew(strdup("111"));	
+	t_list	*t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&lst, t_222);
+	t_list	*t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&lst, t_333);
+	
+	while (lst)
+	{
+		printf("%s -> ", (char *)lst->content);
+		lst = lst->next;
+	}
+	
+	if (lst  == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+
+	printf("\n");
+	printf("---After---\n");
+
+
+	t_list	*ft_lst = ft_lstnew(strdup("111"));	
+	t_list	*ft_t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&ft_lst, ft_t_222);
+	t_list	*ft_t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&ft_lst, ft_t_333);
+
+	ft_lstiter(ft_lst, lstiter_f);
+	
+	while (ft_lst)
+	{
+		printf("%s -> ", (char *)ft_lst->content);
+		ft_lst = ft_lst->next;
+	}
+	
+	if (ft_lst  == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+	printf("\n");
+
+
+	printf("\n");
+	printf("-----------------------------\n");
+
+	
+}
+
+void *lstmap_f(void *content)
+{
+     (void)content;
+     return ("OK !");
+}
+
+void test_ft_lstmap(void)
 {
 
 	printf("\n");
 	
 	printf("ft_memcpy____________________\n");
 
-		
+	printf("\n");
+	printf("---Before---\n");
+
+
+	t_list	*lst = ft_lstnew(strdup("111"));	
+	t_list	*t_222 = ft_lstnew(strdup("222"));
+	ft_lstadd_front(&lst, t_222);
+	t_list	*t_333 = ft_lstnew(strdup("333"));
+	ft_lstadd_front(&lst, t_333);
+
+	t_list *ft_lst;
+	ft_lst = lst;
+
+	while (lst)
+	{
+		printf("%s -> ", (char *)lst->content);
+		lst = lst->next;
+	}
+
+	if (lst  == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+
+	printf("\n");
+	printf("---Result---\n");
+
+	t_list *result;
+	result = ft_lstmap(ft_lst, lstmap_f, NULL);
+
+
+	while (result)
+	{
+		printf("%s -> ", (char *)result->content);
+		result = result->next;
+	}
+	
+	if (result == NULL)
+		printf("NULL\n");
+	else
+		printf("not NULL\n");
+
+
 	printf("\n");
 	printf("-----------------------------\n");
 
@@ -1936,7 +2201,9 @@ int main (void)
 	/* test_ft_lstadd_front(); */
 	/* test_ft_lstsize(); */
 	/* test_ft_lstlast(); */
-	test_ft_lstadd_back();
-
-
+	/* test_ft_lstadd_back(); */
+	/* test_ft_lstdelone(); */
+	/* test_ft_lstclear(); */
+	/* test_ft_lstiter(); */
+	test_ft_lstmap();
 }

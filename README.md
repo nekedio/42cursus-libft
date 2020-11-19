@@ -48,10 +48,10 @@
 - [x] ft_lstsize.c
 - [x] ft_lstlast.c
 - [x] ft_lstadd_back.c
-- [ ] ft_lstdelone
-- [ ] ft_lstclear
-- [ ] ft_lstiter
-- [ ] ft_lstmap
+- [x] ft_lstdelone
+- [x] ft_lstclear
+- [x] ft_lstiter
+- [x] ft_lstmap
 
 
 ### Tests:
