@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 18:03:19 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/15 15:16:51 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/19 20:18:13 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static char				*get_word(char const *str, char const symbol,
 	unsigned int		last_occ;
 	unsigned int		i;
 
-	if (!str || !symbol)
+	if (!str)
 		return (NULL);
 	if (ft_strlen(str) == 0)
 	{
@@ -128,7 +128,7 @@ char					**ft_split(char const *str, char chr)
 	int					c_words;
 	int					i;
 
-	if (!str || !chr)
+	if (!str)
 		return (NULL);
 	c_words = count_words(str, chr);
 	result = (char**)malloc((c_words + 1) * sizeof(*result));

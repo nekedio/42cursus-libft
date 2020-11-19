@@ -6,13 +6,13 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 22:03:40 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/18 22:14:02 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:39:05 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst)
 		return ;

@@ -33,8 +33,9 @@ src = ft_memset.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_split.c \
-		ft_lstnew.c \
+		ft_split.c
+	
+src_b = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -44,10 +45,11 @@ src = ft_memset.c \
 		ft_lstiter.c \
 		ft_lstmap.c
 
-
 lib = libft.h
 
 obj = ${src:.c=.o}
+
+obj_b = ${src_b:.c=.o}
 
 flags = -Wall -Wextra -Werror
 
@@ -64,22 +66,25 @@ ${name}:	${obj}
 	gcc ${flags} -I/${lib} -c $< -o ${<:.c=.o}
 
 clean:
-	rm -f ${obj}
+	rm -f ${obj} ${obj_b}
 
 fclean: clean
 	rm -f ${name}
 
 re: fclean all
 
+bonus:	${obj} ${obj_b}
+	ar rc ${name} ${obj} ${obj_b}
+
 
 
 
 gcr:
-	@gcc ${lib} ${src} main.c
+	@gcc ${lib} ${src} ${src_b} main.c
 	@./a.out
 
 gcc:
-	@gcc ${flags} ${lib} ${src} main.c
+	@gcc ${flags} ${lib} ${src} ${src_b} main.c
 
 run:
 	@./a.out
@@ -87,7 +92,7 @@ run:
 gccr: gcc run
 
 norm:
-	norminette -R CheckForbiddenSourceHeader ${src} ${lib}
+	norminette -R CheckForbiddenSourceHeader ${src} ${src_b} ${lib}
 
 mc:	fclean
 	@rm -f main.o
@@ -96,4 +101,4 @@ mc:	fclean
 	@rm -f libft.h.gch
 
 
-.PHONY: clean fclean all re
+.PHONY: clean fclean all re bonus

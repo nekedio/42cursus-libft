@@ -1,8 +1,9 @@
 #include "libft.h"
 #include <ctype.h>
 #include <stdlib.h>
-
-
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 
 void test_memset(void)
 {
@@ -846,6 +847,17 @@ void test_strnstr(void)
 	printf("ft_strnstr(\"lorem ipsum dolor sit amet\", \"dolor\", 0) = %s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0));
 
 
+	printf("\n");
+	const char *small_str12 = "";
+	size_t len12 = 4;
+	const char *result12;
+	const char *ft_result12;
+	result12 = strnstr(large_str, small_str12, len12);
+	ft_result12 = ft_strnstr(large_str, small_str12, len12);
+	printf("   strnstr(%s, %s, %zu) = %s\n", large_str, small_str12, len12, result12);
+	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str12, len12, ft_result12);
+	printf("\n");
+
 }
 
 void test_strncmp(void)
@@ -1671,35 +1683,67 @@ void test_ft_split(void)
 	if (result == NULL)
 	{
 		printf("NULL\n");
-		return ;
+		//return ;
 	}
 	while (result[i])
 	{
 		printf("[%d] => %s\n", i, result[i]); 
 		i++;
 	}
+	if (result[i] == NULL)
+	{
+		printf("[%d] => NULL\n", i);
+		//return ;
+	}
+
 
 	printf("\n");
 
 	char    *string1 = "split******";
 	char    **result1;
 	char	chr1 = '*';
-	result1 = ft_split(string1, chr);	
+	result1 = ft_split(string1, chr1);	
 	printf("ft_split(%s, %c) = \n", string1, chr1);
 	i = 0;
 	if (result1 == NULL)
 	{
 		printf("NULL\n");
-		return ;
+		//return ;
 	}
 	while (result1[i])
 	{
 		printf("[%d] => %s\n", i, result1[i]); 
 		i++;
 	}
+	if (result1[i] == NULL)
+	{
+		printf("[%d] => NULL\n", i);
+		//return ;
+	}
 
+	printf("\n");
 
-
+	char    *string2 = "split******";
+	char    **result2;
+	char	chr2 = '\0';
+	result2 = ft_split(string2, chr2);	
+	printf("ft_split(%s, %c) = \n", string2, chr2);
+	i = 0;
+	if (result2 == NULL)
+	{
+		printf("NULL\n");
+		//return ;
+	}
+	while (result2[i])
+	{
+		printf("[%d] => %s\n", i, result2[i]); 
+		i++;
+	}
+	if (result2[i] == NULL)
+	{
+		printf("[%d] => NULL\n", i);
+		//return ;
+	}
 
 
 	printf("-----------------------------\n");
@@ -2168,7 +2212,7 @@ int main (void)
 	/* test_memcmp(); */
 	/* test_strlen(); */
 	/* test_strlcpy(); //bsd */
-	/* test_strlcat(); //bsd */
+	test_strlcat(); //bsd
 	/* test_strchr(); */
 	/* test_strrchr(); */
 	/* test_strnstr(); //bsd */
@@ -2205,5 +2249,5 @@ int main (void)
 	/* test_ft_lstdelone(); */
 	/* test_ft_lstclear(); */
 	/* test_ft_lstiter(); */
-	test_ft_lstmap();
+	/* test_ft_lstmap(); */
 }
