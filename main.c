@@ -278,7 +278,12 @@ void test_memchr(void)
 	res4 = memchr(src4, symbol4, len4);
 	printf("memchr(%s, %c, %d) = %s\n", src4, symbol4, len4, res4);
 
-
+	char *src5 = "";
+	char *res5;
+	char symbol5 = '\0';
+	int len5 = 1;
+	res5 = memchr(src5, symbol5, len5);
+	printf("memchr(%s, %c, %d) = %p\n", src5, symbol5, len5, res5);
 
 
 	printf("-----------------------------\n");
@@ -318,7 +323,12 @@ void test_memchr(void)
 	ft_res4 = ft_memchr(ft_src4, ft_symbol4, ft_len4);
 	printf("ft_memchr(%s, %c, %d) = %s\n", ft_src4, ft_symbol4, ft_len4, ft_res4);
 
-
+	char *ft_src5 = "";
+	char *ft_res5;
+	char ft_symbol5 = '\0';
+	int ft_len5 = 1;
+	ft_res5 = ft_memchr(ft_src5, ft_symbol5, ft_len5);
+	printf("memchr(%s, %c, %d) = %p\n", ft_src5, ft_symbol5, ft_len5, ft_res5);
 
 
 
@@ -2313,7 +2323,7 @@ int main (void)
 	/* test_memcpy(); */
 	/* test_memccpy(); */
 	/* test_memmove(); */
-	/* test_memchr(); */
+	test_memchr();
 	/* test_memcmp(); */
 	/* test_strlen(); */
 	/* test_strlcpy(); //bsd */
@@ -2346,13 +2356,13 @@ int main (void)
 	/* test_ft_split(); */
 
 	// bonus
-	test_ft_lstnew();
+	/* test_ft_lstnew(); */
 	/* test_ft_lstadd_front(); */
 	/* test_ft_lstsize(); */
 	/* test_ft_lstlast(); */
 	/* test_ft_lstadd_back(); */
 	/* test_ft_lstdelone(); */
-	test_ft_lstclear();
+	/* test_ft_lstclear(); */
 	/* test_ft_lstiter(); */
-	test_ft_lstmap();
+	/* test_ft_lstmap(); */
 }
