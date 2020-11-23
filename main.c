@@ -257,6 +257,30 @@ void test_memchr(void)
 	res1 = memchr(src1, symbol1, len1);
 	printf("memchr(%s, %c, %d) = %s\n", src1, symbol1, len1, res1);
 
+	unsigned char src2[10]="1234567";
+	unsigned char *res2;
+	char symbol2 = '4';
+	int len2 = 0;
+	res2 = memchr(src2, symbol2, len2);
+	printf("memchr(%s, %c, %d) = %s\n", src2, symbol2, len2, res2);
+
+	unsigned char src3[10]="1234567";
+	unsigned char *res3;
+	char symbol3 = '*';
+	int len3 = 0;
+	res3 = memchr(src3, symbol3, len3);
+	printf("memchr(%s, %c, %d) = %s\n", src3, symbol3, len3, res3);
+
+	char *src4 = NULL;
+	char *res4;
+	char symbol4 = '*';
+	int len4 = 0;
+	res4 = memchr(src4, symbol4, len4);
+	printf("memchr(%s, %c, %d) = %s\n", src4, symbol4, len4, res4);
+
+
+
+
 	printf("-----------------------------\n");
 
 	unsigned char ft_src[10]="qwertyu";
@@ -273,6 +297,33 @@ void test_memchr(void)
 	ft_res1 = ft_memchr(ft_src1, ft_symbol1, ft_len1);
 	printf("ft_memchr(%s, %c, %d) = %s\n", ft_src1, ft_symbol1, ft_len1, ft_res1);
 
+	unsigned char ft_src2[10]="1234567";
+	unsigned char *ft_res2;
+	char ft_symbol2 = '4';
+	int ft_len2 = 0;
+	ft_res2 = ft_memchr(ft_src2, ft_symbol2, ft_len2);
+	printf("ft_memchr(%s, %c, %d) = %s\n", ft_src2, ft_symbol2, ft_len2, ft_res2);
+
+	unsigned char ft_src3[10]="1234567";
+	unsigned char *ft_res3;
+	char ft_symbol3 = '*';
+	int ft_len3 = 0;
+	ft_res3 = ft_memchr(ft_src3, ft_symbol3, ft_len3);
+	printf("ft_memchr(%s, %c, %d) = %s\n", ft_src3, ft_symbol3, ft_len3, ft_res3);
+
+	char *ft_src4 = NULL;
+	char *ft_res4;
+	char ft_symbol4 = '*';
+	int ft_len4 = 0;
+	ft_res4 = ft_memchr(ft_src4, ft_symbol4, ft_len4);
+	printf("ft_memchr(%s, %c, %d) = %s\n", ft_src4, ft_symbol4, ft_len4, ft_res4);
+
+
+
+
+
+
+
 	printf("\n");
 	char *tsrc = "/|\x12\xff\x09\x42\2002\42|\\";
 	int size = 10;
@@ -280,6 +331,10 @@ void test_memchr(void)
 	printf("test %s\n", memchr(tsrc, '\200', size));
 	printf("ft_test %s\n", ft_memchr(tsrc, '\200', size));
 
+
+	//printf("-----%s\n", ft_memchr(((void *)0), '\0', 0x20));
+
+	//printf("-----%s\n", memchr(((void *)0), '\0', 0x20));
 }
 
 void test_memcmp(void)
@@ -858,6 +913,42 @@ void test_strnstr(void)
 	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str, small_str12, len12, ft_result12);
 	printf("\n");
 
+
+	printf("\n");
+	const char *large_str13 = "";
+	const char *small_str13 = "";
+	size_t len13 = 1;
+	const char *result13;
+	const char *ft_result13;
+	result13 = strnstr(large_str13, small_str13, len13);
+	ft_result13 = ft_strnstr(large_str13, small_str13, len13);
+	printf("   strnstr(%s, %s, %zu) = %s\n", large_str13, small_str13, len13, result13);
+	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str13, small_str13, len13, ft_result13);
+	printf("\n");
+
+	printf("\n");
+	const char *large_str14 = NULL;
+	const char *small_str14 = "qwer";
+	size_t len14 = 0;
+	const char *result14;
+	const char *ft_result14;
+	result14 = strnstr(large_str14, small_str14, len14);
+	ft_result14 = ft_strnstr(large_str14, small_str14, len14);
+	printf("   strnstr(%s, %s, %zu) = %s\n", large_str14, small_str14, len14, result14);
+	printf("ft_strnstr(%s, %s, %zu) = %s\n", large_str14, small_str14, len14, ft_result14);
+	printf("\n");
+
+
+	printf("   strnstr(lorem ipsum dolor sit amet, ipsumm, 30)) = %s\n", strnstr("lorem ipsum dolor sit amet", "ipsumm", 30));
+	printf("ft_strnstr(lorem ipsum dolor sit amet, ipsumm, 30)) = %s\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", 30));
+
+
+
+
+
+	//printf("-----%s\n", ft_strnstr(((void *)0), "fake", 3));
+
+	//printf("-----%s\n", strnstr(((void *)0), "fake", 3));
 }
 
 void test_strncmp(void)
@@ -1410,8 +1501,22 @@ void test_ft_substr(void)
 	char *result6;
 	result6 = ft_substr(str, start_symbol6, len6);
 	printf("ft_substr(%s, %d, %zu) = %s\n", str, start_symbol6, len6, result6);
-	
 
+	char *str1 = "test";
+	
+	int start_symbol7 = 1;
+	size_t len7 = 6;
+	char *result7;
+	result7 = ft_substr(str1, start_symbol7, len7);
+	printf("ft_substr(%s, %d, %zu) = %s   ex: est\n", str1, start_symbol7, len7, result7);
+
+	char *str2 = "";
+
+	int start_symbol8 = 0;
+	size_t len8 = 1;
+	char *result8;
+	result8 = ft_substr(str2, start_symbol8, len8);
+	printf("ft_substr(%s, %d, %zu) = %s   ex:\n", str2, start_symbol8, len8, result8);
 	
 	printf("-----------------------------\n");
 
@@ -2212,7 +2317,7 @@ int main (void)
 	/* test_memcmp(); */
 	/* test_strlen(); */
 	/* test_strlcpy(); //bsd */
-	test_strlcat(); //bsd
+	/* test_strlcat(); //bsd */
 	/* test_strchr(); */
 	/* test_strrchr(); */
 	/* test_strnstr(); //bsd */
@@ -2241,13 +2346,13 @@ int main (void)
 	/* test_ft_split(); */
 
 	// bonus
-	/* test_ft_lstnew(); */
+	test_ft_lstnew();
 	/* test_ft_lstadd_front(); */
 	/* test_ft_lstsize(); */
 	/* test_ft_lstlast(); */
 	/* test_ft_lstadd_back(); */
 	/* test_ft_lstdelone(); */
-	/* test_ft_lstclear(); */
+	test_ft_lstclear();
 	/* test_ft_lstiter(); */
-	/* test_ft_lstmap(); */
+	test_ft_lstmap();
 }

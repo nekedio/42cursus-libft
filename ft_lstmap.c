@@ -6,7 +6,7 @@
 /*   By: dxenophi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:08:48 by dxenophi          #+#    #+#             */
-/*   Updated: 2020/11/19 17:40:49 by dxenophi         ###   ########.fr       */
+/*   Updated: 2020/11/21 18:22:19 by dxenophi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*ft_lst;
 	t_list	*ft_new;
 
-	if (!lst || !f)
+	if (!del && !f)
 		return (NULL);
 	ft_lst = NULL;
 	while (lst)
